@@ -1,13 +1,24 @@
 # AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 
 This repository contains the official implementation of the paper: "AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint".
 
 ## Overview
-AlphaSteer is a novel approach for refusal steering in large language models (LLMs) that leverages principled null-space constraints to effectively defend against jailbreak attacks while preserving the model's original utility. By operating in the null-space, our method guides model responses to resist harmful prompts without compromising performance on legitimate tasks.
+AlphaSteer is a theoretically grounded activation steering method designed to enhance LLM safety without compromising utility. While traditional activation steering approaches face a trade-off between safety and performance, AlphaSteer addresses this challenge through a principled learning approach with dual objectives:
 
-![AlphaSteer Overview](assets/overview.png)
+1. **Utility Preservation**: Learns to create near-zero steering vectors for benign inputs using null-space constraints
+2. **Safety Enhancement**: Generates effective refusal direction vectors for malicious prompts through linear regression
+
+Our experiments show that AlphaSteer effectively defends against jailbreak attacks while maintaining the model's performance on legitimate tasks, offering a balanced solution to the safety-utility trade-off problem in LLMs.
+
+![AlphaSteer Overview](assets/MainFigure.png)
 
 ## Installation
+
+```bash
+conda create -n alphaSteer python=3.11
+conda activate alphaSteer
+pip install -r requirements.txt
+```
