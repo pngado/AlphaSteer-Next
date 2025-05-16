@@ -13,12 +13,12 @@ AlphaSteer is a theoretically grounded activation steering method designed to en
 
 Our experiments show that AlphaSteer effectively defends against jailbreak attacks while maintaining the model's performance on legitimate tasks, offering a balanced solution to the safety-utility trade-off problem in LLMs.
 
-![AlphaSteer Overview](assets/MainFigure.png)
+![AlphaSteer Overview](assets/MainFigure.jpeg)
 
 ## Installation
 
 ```bash
-conda create -n alphaSteer python=3.11
-conda activate alphaSteer
+conda create -n alphasteer python=3.11
+conda activate alphasteer
 pip install -r requirements.txt
 ```
