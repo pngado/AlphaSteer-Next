@@ -15,7 +15,7 @@ torch.manual_seed(42)
 np.random.seed(42)
 
 from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 
 class EmbeddingExtractor:
     def __init__(self, model_name_or_path, device=None):
@@ -29,6 +29,9 @@ class EmbeddingExtractor:
             else torch.device("cuda" if torch.cuda.is_available() else "cpu")
         logger.info(f"Loading model from {model_name_or_path}")
         
+        self.config = AutoConfig.from_pretrained(model_name_or_path)
+        self.num_layers = self.config.num_hidden_layers
+        
         self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
         self.tokenizer.padding_side = "left"
         self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -40,7 +43,7 @@ class EmbeddingExtractor:
         )
         
         logger.info(f"Model loaded successfully to {self.device}")
-    
+        logger.info(f"Number of layers: {self.num_layers}")
     def extract_embeddings(self, prompts, batch_size, layers):
         """
         Extract embeddings from the model for given prompts.

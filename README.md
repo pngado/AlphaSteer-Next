@@ -22,3 +22,12 @@ conda create -n alphasteer python=3.11
 conda activate alphasteer
 pip install -r requirements.txt
 ```
+
+## Usage
+Let's take `Llama3.1-8B-Instruct` for instance. You can run
+```
+./scripts/alphasteer.sh
+```
+
+
+

@@ -21,13 +21,14 @@ def parse_args():
     parser.add_argument("--prompt_column", type=str, required=True)
     parser.add_argument("--output_file", type=str, required=True)
     parser.add_argument("--batch_size", type=int, required=True)
-    parser.add_argument("--layers", type=str, required=True)
+    parser.add_argument("--layers", type=str, required=False, default=None)
+    parser.add_argument("--device", type=str, required=False, default=None)
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
-    extractor = EmbeddingExtractor(args.model_name)
+    extractor = EmbeddingExtractor(args.model_name, device=args.device)
     
     # Check if input file is JSON
     if os.path.exists(args.input_file) and args.input_file.endswith('.json'):
@@ -41,7 +42,10 @@ if __name__ == "__main__":
         raise ValueError(f"Input file {args.input_file} is not a valid JSON file")
     
     # Parse layers string to list of integers
-    layers = [int(layer.strip()) for layer in args.layers.split(',')]
+    if args.layers is not None:
+        layers = [int(layer.strip()) for layer in args.layers.split(',')]
+    else:
+        layers = list(range(extractor.num_layers))
     
     # Extract embeddings
     embeddings = extractor.extract_embeddings(

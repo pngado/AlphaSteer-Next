@@ -11,7 +11,7 @@ np.random.seed(42)
 import time
 
 from transformers import AutoTokenizer
-from utils.const import NSS_MODELS_DICT, NSS_STEERING_LAYERS, Steer_MODELS_DICT, MODELS_DICT
+from utils.const import AlphaSteer_MODELS_DICT, AlphaSteer_STEERING_LAYERS, Steer_MODELS_DICT, MODELS_DICT
 
 import logging
 # Configure logging
@@ -44,7 +44,6 @@ def load_config(config_path):
         batch_size: batch size
         max_new_tokens: maximum number of tokens to generate
         prompt_column: name of prompt column
-        response_column: name of response column
     '''
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
@@ -64,12 +63,12 @@ if __name__ == "__main__":
     logger.info(f"args: {args}")
 
     if hasattr(args, "steering_matrix_path"):
-        model_class, config_class, model_id = NSS_MODELS_DICT[args.model_name]
+        model_class, config_class, model_id = AlphaSteer_MODELS_DICT[args.model_name]
         if os.path.exists(args.steering_matrix_path):
             steering_matrix_or_vector = torch.load(args.steering_matrix_path, map_location=args.device)
             steering_matrix_or_vector = steering_matrix_or_vector.to(torch.bfloat16)
             logger.info(f"Generate with Null Space Steering")
-            steering_layers = NSS_STEERING_LAYERS[args.model_name]
+            steering_layers = AlphaSteer_STEERING_LAYERS[args.model_name]
         else:
             raise ValueError("steering_matrix_path does not exist")
     elif hasattr(args, "steering_vector_path"):

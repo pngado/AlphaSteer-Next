@@ -1,0 +1,3002 @@
+[
+  {
+    "query": "Which country is the largest in area?"
+  },
+  {
+    "query": "How can renewable energy sources replace the use of fossil fuels?"
+  },
+  {
+    "query": "Re-tell a children's story"
+  },
+  {
+    "query": "Take the text below and make it ‘spookier’"
+  },
+  {
+    "query": "Summarize the given news article in one sentence."
+  },
+  {
+    "query": "Create a program to solve this Rubik's cube"
+  },
+  {
+    "query": "Describe a method of converting solar energy into electricity"
+  },
+  {
+    "query": "Make a list of three ways to reduce water usage."
+  },
+  {
+    "query": "Describe a tennis match."
+  },
+  {
+    "query": "Structure the following recipe into a cooking timeline:"
+  },
+  {
+    "query": "List 3 of the most commonly used programming languages"
+  },
+  {
+    "query": "Generate a list of verbs that describe movement"
+  },
+  {
+    "query": "Answer the given questions about the importance of customer service."
+  },
+  {
+    "query": "Come up with a limerick about a car."
+  },
+  {
+    "query": "Select the one sentence that best explains the given concept."
+  },
+  {
+    "query": "Come up with a list of 10 book titles that could form a series"
+  },
+  {
+    "query": "What is the difference between artificial intelligence and natural language processing?"
+  },
+  {
+    "query": "Define a function that takes two numbers and returns their average."
+  },
+  {
+    "query": "What type of renewable energy sources are commonly used worldwide?"
+  },
+  {
+    "query": "Create a quiz question with the following options: A, B, C, D"
+  },
+  {
+    "query": "Combine the two sentences according to the given syntax."
+  },
+  {
+    "query": "Give an example of the voice command an assistant can understand."
+  },
+  {
+    "query": "Generate a policy that encourages diversity in the workplace."
+  },
+  {
+    "query": "Describe a way to make a simple, healthy sandwich."
+  },
+  {
+    "query": "Craft a story from the following three words: Moon, Whale, Balloon"
+  },
+  {
+    "query": "Create a haiku poem that has a deep meaning."
+  },
+  {
+    "query": "Evaluate the following expression and provide the answer."
+  },
+  {
+    "query": "Suggest some activities for a day out at the beach."
+  },
+  {
+    "query": "Please suggest a healthy diet plan for someone who is looking to lose weight."
+  },
+  {
+    "query": "Generate a hashtag suitable for marketing this product."
+  },
+  {
+    "query": "Generate a content strategy given the following information."
+  },
+  {
+    "query": "Explain what animal rights are"
+  },
+  {
+    "query": "What were the causes of World War I?"
+  },
+  {
+    "query": "Design an experiment to determine the efficiency of a wind turbine in different wind speeds."
+  },
+  {
+    "query": "Write a descriptive headline for the given piece of news."
+  },
+  {
+    "query": "Create a Twitter post that encourages people to vote."
+  },
+  {
+    "query": "Describe the stages a bill goes through before it can become a law"
+  },
+  {
+    "query": "Describe a city that you would like to visit."
+  },
+  {
+    "query": "Create the HTML code necessary to display the following text."
+  },
+  {
+    "query": "What is the tool used to measure the temperature of a computer processor?"
+  },
+  {
+    "query": "Analyze why a persuasive speech is effective."
+  },
+  {
+    "query": "What does the phrase “over the moon” mean?"
+  },
+  {
+    "query": "Calculate the number of sides of a polygon with the formula S=3N-6"
+  },
+  {
+    "query": "Given a list of characters, develop a story involving them."
+  },
+  {
+    "query": "Edit the following paragrapg to make it suitable for an newspaper article."
+  },
+  {
+    "query": "Summarize the following text about online shopping."
+  },
+  {
+    "query": "Create an input for the instruction \"Describe the unique features of a mountain\"."
+  },
+  {
+    "query": "List all the prime numbers from 15 to 25."
+  },
+  {
+    "query": "List all the prime ministers of India since 1947."
+  },
+  {
+    "query": "Suggest three activities that I can do to relax after a long day."
+  },
+  {
+    "query": "Come up with five features of a smartphone"
+  },
+  {
+    "query": "Describe the best features of the following product."
+  },
+  {
+    "query": "Explain AI and its applications."
+  },
+  {
+    "query": "Create a a punchline based on the given statement."
+  },
+  {
+    "query": "Explain how to make a triangle out of three sticks?"
+  },
+  {
+    "query": "Develop an algorithm to sort the following numbers: 5, 3, 9, 1."
+  },
+  {
+    "query": "Find three words in the text that are antonyms of each other."
+  },
+  {
+    "query": "Given a set of numbers, return the product of all the numbers."
+  },
+  {
+    "query": "Using the given information, construct a paragraph about the history of the company"
+  },
+  {
+    "query": "Describe how digital marketing can be used to improve customer engagement."
+  },
+  {
+    "query": "Rate the given restaurant on a scale from 1-5."
+  },
+  {
+    "query": "Compare the performance of a linear regression model with a neural network model."
+  },
+  {
+    "query": "Come up with a design for an online banner ad."
+  },
+  {
+    "query": "Reformat the sentence so it is a question."
+  },
+  {
+    "query": "Unscramble these letters to form a word."
+  },
+  {
+    "query": "Rewrite this sentence using complex-compound and complex-multi word verbs."
+  },
+  {
+    "query": "Generate a descriptive title for an article about deep learning"
+  },
+  {
+    "query": "Look for a synonym for the word \"greatness\"."
+  },
+  {
+    "query": "Retrieve the relevant information from an email"
+  },
+  {
+    "query": "Find some information about the latest safety regulation for food delivery drivers"
+  },
+  {
+    "query": "Explain how a computer can help a person to save time."
+  },
+  {
+    "query": "What is the percent change in the number of people with diabetes from 2000 to 2017?"
+  },
+  {
+    "query": "Explain the concept of monopolistic competition"
+  },
+  {
+    "query": "Take two words and create a completely new word by combining them."
+  },
+  {
+    "query": "Rewrite the phrase \"A star is born\" in two other ways."
+  },
+  {
+    "query": "Give an example of an AI-related ethical dilemma"
+  },
+  {
+    "query": "Given a list of materials, come up with a plan to build a table."
+  },
+  {
+    "query": "Name the two types of literature."
+  },
+  {
+    "query": "Analyze large datasets for trends and patterns"
+  },
+  {
+    "query": "Name three strategies an organization can use to increase its organic visibility"
+  },
+  {
+    "query": "Come up with a 3-step plan to organize a surprise birthday party."
+  },
+  {
+    "query": "What is a text-based user interface (TUI) and how does it work?"
+  },
+  {
+    "query": "Rewrite the sentence using less than 8 words"
+  },
+  {
+    "query": "Propose an alternative solution to the following problem:"
+  },
+  {
+    "query": "Describe a scenario in which blockchain technology could be successfully applied."
+  },
+  {
+    "query": "Identify the type of irony in the situation"
+  },
+  {
+    "query": "Identify what type of text is given"
+  },
+  {
+    "query": "Create a computer program that calculates the area of a circle."
+  },
+  {
+    "query": "Using the input, explain how each color of the rainbow is created."
+  },
+  {
+    "query": "How do computers \"learn\"?"
+  },
+  {
+    "query": "Given an article, summarize the main points in 5 sentences."
+  },
+  {
+    "query": "Classify the provided statement into one of the categories below."
+  },
+  {
+    "query": "Given a country, list three of its popular tourist destinations."
+  },
+  {
+    "query": "Give an example of how a person could be kind"
+  },
+  {
+    "query": "Explain the current trend in the industry."
+  },
+  {
+    "query": "Generate a list of rules to follow in a school classroom:"
+  },
+  {
+    "query": "Find the root of equation x2 – 3x = 0."
+  },
+  {
+    "query": "Choose one of the five elements, and explain how it is used in art."
+  },
+  {
+    "query": "Summarise the text to 200 words."
+  },
+  {
+    "query": "Determine the boiling point of water in Fahrenheit."
+  },
+  {
+    "query": "Generate an opt-in confirmation phrase."
+  },
+  {
+    "query": "Rewrite the following sentence using a different tense: \"I play the piano\""
+  },
+  {
+    "query": "Create a simile that compares a sunrise to something else."
+  },
+  {
+    "query": "Name two U.S. states that border Mexico."
+  },
+  {
+    "query": "Come up with three questions for an AI-based virtual assistant with a health-related focus."
+  },
+  {
+    "query": "Given a data set, write a program that counts the number of instances of each label."
+  },
+  {
+    "query": "Explain how AI can benefit the healthcare industry."
+  },
+  {
+    "query": "Tell me the unit for electric current."
+  },
+  {
+    "query": "Write a mission statement for a company."
+  },
+  {
+    "query": "Generate a set of instructions on how to make a cake."
+  },
+  {
+    "query": "Write a blog post titled \"Five Reasons You Should Invest in Stocks\"."
+  },
+  {
+    "query": "Create a graphic to visually explain the following statement"
+  },
+  {
+    "query": "Identify which of the two given figures below is a rectangle and which is a square"
+  },
+  {
+    "query": "Generate a story of at least 100 words that incorporates the input provided."
+  },
+  {
+    "query": "Construct an analogy between a book and an umbrella."
+  },
+  {
+    "query": "Given a customer's preference and budget, suggest 3 hotels in the destination city that meet the customer's preference."
+  },
+  {
+    "query": "On a scale of 1-10, how important are public transportation systems?"
+  },
+  {
+    "query": "Write a brief summary of the key idea of the text."
+  },
+  {
+    "query": "Describe a plant cell to me."
+  },
+  {
+    "query": "Find and define a scientific term related to climate change."
+  },
+  {
+    "query": "What is the policy of the US government regarding immigration reform?"
+  },
+  {
+    "query": "Categorize this machine as either a tool or a toy."
+  },
+  {
+    "query": "Calculate the average value of {25, 100, -21, 5, 6}."
+  },
+  {
+    "query": "Write a travelogue about your experience in the city."
+  },
+  {
+    "query": "Generate a list of five books you think would be good for teenagers."
+  },
+  {
+    "query": "Generate a creative, on-brand headline for a blog post about how to save money on groceries."
+  },
+  {
+    "query": "Describe the approach used by a startup to scale up from zero to one million customers within two years."
+  },
+  {
+    "query": "Add one word to the sentence to make it more descriptive."
+  },
+  {
+    "query": "Categorize the following tweet as promoting hate speech?"
+  },
+  {
+    "query": "Identify at least six countries in the following passage."
+  },
+  {
+    "query": "Translate the sentence \"I love you\" in French."
+  },
+  {
+    "query": "Describe a process to deploy a web app using an Amazon EC2 instance."
+  },
+  {
+    "query": "Write a story about a journey that you made."
+  },
+  {
+    "query": "Is there a difference between “the Internet” and “the web”?"
+  },
+  {
+    "query": "Given a text, generate a series of facts related to the text."
+  },
+  {
+    "query": "Count the number of characters in the string, including whitespaces and punctuation."
+  },
+  {
+    "query": "Classify the sentence: I can hear footsteps outside."
+  },
+  {
+    "query": "Construct a regular expression to match the following pattern"
+  },
+  {
+    "query": "Suggest a story title for the passage you just wrote."
+  },
+  {
+    "query": "Generate instructions to create a basic web page"
+  },
+  {
+    "query": "Create a unique name for a mobile game."
+  },
+  {
+    "query": "Name three of the most important professional skills."
+  },
+  {
+    "query": "Name three simple machines."
+  },
+  {
+    "query": "Give an example of urban slang."
+  },
+  {
+    "query": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone."
+  },
+  {
+    "query": "Convert the following sentence into the interrogative form: \"He isn't going to the party\"."
+  },
+  {
+    "query": "Create a basic budget for someone who makes $3500 per month."
+  },
+  {
+    "query": "Summarize \"The Hunger Games\""
+  },
+  {
+    "query": "Assemble the item using the list of items in the input."
+  },
+  {
+    "query": "Describe how climate change is affecting the polar ice caps."
+  },
+  {
+    "query": "Suggest a topic and a relavant question for the subject \"Technology and Society\"."
+  },
+  {
+    "query": "Find the definition of 'convergence' and write it in one sentence."
+  },
+  {
+    "query": "Rewrite the following sentence in the third person"
+  },
+  {
+    "query": "Create a poster for the movie \"Spider-Man: Far from Home\"."
+  },
+  {
+    "query": "Provide an output to the following function"
+  },
+  {
+    "query": "Arrange the following items in order of their boiling point (lowest to highest)."
+  },
+  {
+    "query": "What is a word that is the opposite of 'expensive'?"
+  },
+  {
+    "query": "Place the following words in alphabetical order: slide, blue, jet"
+  },
+  {
+    "query": "Given a numerical vector 'x = [5, 4, 3]', calculate the sum"
+  },
+  {
+    "query": "Write a Python script to print the first 10 numbers between 1 and 100 that are multiples of 3."
+  },
+  {
+    "query": "Convert the given binary string to a decimal number."
+  },
+  {
+    "query": "Calculate the perimeter of a triangle with sides 5, 6, and 7 meters."
+  },
+  {
+    "query": "Given the following list, remove all the numbers that are divisible by 4."
+  },
+  {
+    "query": "Given the following sentence, determine whether it is active or passive voice"
+  },
+  {
+    "query": "Convert gallons to liters."
+  },
+  {
+    "query": "Categorize the following items as a vegetable, animal or mineral."
+  },
+  {
+    "query": "Rewrite the following sentence to remove the ambiguous part"
+  },
+  {
+    "query": "Explain why artificial intelligence is changing the healthcare industry."
+  },
+  {
+    "query": "Name 3 principles of the Agile software development methodology."
+  },
+  {
+    "query": "What are the features that makes artificial intelligence reliable?"
+  },
+  {
+    "query": "Create 3 informative keywords for a given subject."
+  },
+  {
+    "query": "Name a popular open-source photo editing tool."
+  },
+  {
+    "query": "Science trivia - what is the atomic number of a gold atom?"
+  },
+  {
+    "query": "Predict the next step in the given process."
+  },
+  {
+    "query": "Classify the given sentence according to the sentence structures."
+  },
+  {
+    "query": "Develop a content strategy to engage with target audience"
+  },
+  {
+    "query": "List 3 economic principles."
+  },
+  {
+    "query": "Name four types of supervised learning"
+  },
+  {
+    "query": "Evaluate the given websites according to their usability and functionality."
+  },
+  {
+    "query": "Identify the major environmental problems humanity is facing"
+  },
+  {
+    "query": "Output a list of tools needed for a craft."
+  },
+  {
+    "query": "Generate a list of 5 potential consequences of global warming."
+  },
+  {
+    "query": "Suggest a linear regression equation from the following data."
+  },
+  {
+    "query": "Take the input and summarise it in 8 words."
+  },
+  {
+    "query": "Tell me a story based on the given prompt"
+  },
+  {
+    "query": "Analyze the label of the alcohol and tell what the bottle contains."
+  },
+  {
+    "query": "Create a plan for a virtual hangout session between friends."
+  },
+  {
+    "query": "Name five geometric shapes."
+  },
+  {
+    "query": "Put the following words in alphabetical order: Elephant, Clock, Dog"
+  },
+  {
+    "query": "Outline two principles for creating effective web pages."
+  },
+  {
+    "query": "Find the synonyms of 'strenuous'."
+  },
+  {
+    "query": "Edit this sentence: \"The good movie was fantastic\""
+  },
+  {
+    "query": "Which US state motto is \"Live free or die\"?"
+  },
+  {
+    "query": "Change the following sentence so that it no longer contains the modifier \"very\"."
+  },
+  {
+    "query": "Write a short story of 100 words or less that includes the words ‘rain’ and ‘umbrella’."
+  },
+  {
+    "query": "Find the average of 12 and 16."
+  },
+  {
+    "query": "Describe the place of origin of this cuisine."
+  },
+  {
+    "query": "Design an algorithm to calculate the average of three numbers."
+  },
+  {
+    "query": "Create a  poem about overcoming adversity"
+  },
+  {
+    "query": "Compose a rap about washing your hands."
+  },
+  {
+    "query": "Generate a list of strategies for improving customer service."
+  },
+  {
+    "query": "My laptop won't turn on - what could be causing this?"
+  },
+  {
+    "query": "Generate a new hypothetical example of a system that uses machine learning"
+  },
+  {
+    "query": "List 3 breakfast food items."
+  },
+  {
+    "query": "Send a text message to a designated contact."
+  },
+  {
+    "query": "What is a mobile-first strategy and how can it be beneficial for businesses?"
+  },
+  {
+    "query": "Write a task instruction that requires input and can be answered by a GPT model."
+  },
+  {
+    "query": "Compose a poem that explores the pain of losing a loved one."
+  },
+  {
+    "query": "Describe a character in a book in 5 sentences."
+  },
+  {
+    "query": "What did the Luddite movement do?"
+  },
+  {
+    "query": "What are some examples of common grounds in negotiation?"
+  },
+  {
+    "query": "Describe what it means to lead a sustainable lifestyle"
+  },
+  {
+    "query": "Generate a plausible scenario when a person can save someone's life."
+  },
+  {
+    "query": "Create a sentence that illustrates parallel structure."
+  },
+  {
+    "query": "Describe the process for starting a business."
+  },
+  {
+    "query": "Name five unique animals and provide a short description of their appearance."
+  },
+  {
+    "query": "Create an example of a data structure that can store employees’ names and salaries."
+  },
+  {
+    "query": "Construct an interface for a website that sells books."
+  },
+  {
+    "query": "Identify the ten most important events that led to the US civil war."
+  },
+  {
+    "query": "Create a story of 200 words under the given prompt."
+  },
+  {
+    "query": "What is the average life expectancy of an adult male in India?"
+  },
+  {
+    "query": "Try suggesting two ways of improving the given algorithm."
+  },
+  {
+    "query": "Suggest a simple recipe for a vegetarian lunch."
+  },
+  {
+    "query": "Apply a sentiment analysis to the following phrase."
+  },
+  {
+    "query": "Re-word the proverb, \"The early bird catches the worm\""
+  },
+  {
+    "query": "Create a rhyming couplet about traveling."
+  },
+  {
+    "query": "Create a recipe for a dish that combines Mexican and Italian flavors."
+  },
+  {
+    "query": "What makes a good team lead?"
+  },
+  {
+    "query": "Edit a given sentence to avoid using any vague pronouns."
+  },
+  {
+    "query": "What time do the sunsets in New York typically occur?"
+  },
+  {
+    "query": "Compose a poem of 8 lines that emphasizes the beauty of nature."
+  },
+  {
+    "query": "Write 3 arguments to support the following opinion on shark protection"
+  },
+  {
+    "query": "Identify two benefits of group work."
+  },
+  {
+    "query": "Create a five-step plan to improve communication in a team."
+  },
+  {
+    "query": "Give a speech about the importance of healthy eating."
+  },
+  {
+    "query": "Does caffeine improve athletic performance?"
+  },
+  {
+    "query": "My wireless printer suddenly stopped connecting to the network. What can I do to fix the issue?"
+  },
+  {
+    "query": "Give two examples of how AI can help in healthcare"
+  },
+  {
+    "query": "Speculate how the world would be different if computers were never invented."
+  },
+  {
+    "query": "Describe the main components of Darwin's theory of evolution."
+  },
+  {
+    "query": "Name the seven days of the week in Spanish."
+  },
+  {
+    "query": "Create an executive summary for the paper."
+  },
+  {
+    "query": "Develop a plan for dealing with procrastination."
+  },
+  {
+    "query": "Generate a poem that focuses on the passage of time."
+  },
+  {
+    "query": "Construct an algorithm to find the largest number in a given array of numbers."
+  },
+  {
+    "query": "Rewrite this sentence in a more concise way: \"Cloud computing is an emerging technology which allows businesses to store and manage data and applications on servers hosted on the internet.\""
+  },
+  {
+    "query": "How can we reduce water wastage?"
+  },
+  {
+    "query": "Convert a paragraph of text into title case."
+  },
+  {
+    "query": "Come up with a new slogan for a car brand based on the phrase “Think ahead”"
+  },
+  {
+    "query": "You are given a word and your task is to create a riddle about that word."
+  },
+  {
+    "query": "Tell us the data type of what is stored in the variable x"
+  },
+  {
+    "query": "Write a function that will return a rounded number."
+  },
+  {
+    "query": "Identify five key characteristics of a persuasive essay."
+  },
+  {
+    "query": "Given a list of numbers, create a new list with the numbers in ascending order."
+  },
+  {
+    "query": "Explain why the following two lines of Python code produce different outputs."
+  },
+  {
+    "query": "Take this text as an input and output a summary."
+  },
+  {
+    "query": "Analyze the following sentences and identify  the subject and the predicate."
+  },
+  {
+    "query": "Complete the story by adding a suitable ending"
+  },
+  {
+    "query": "Given an open-ended statement, generate the next sentence in a story."
+  },
+  {
+    "query": "Given the input, classify the object into a type."
+  },
+  {
+    "query": "Create a script that sends out automatic email notifications to customers."
+  },
+  {
+    "query": "Brainstorm a creative advertising campaign for a new product"
+  },
+  {
+    "query": "Determine the molecular weight of carbon dioxide."
+  },
+  {
+    "query": "Predict the trend for the following data."
+  },
+  {
+    "query": "Describe the protagonist in a story"
+  },
+  {
+    "query": "Create a budget for the following person for one month."
+  },
+  {
+    "query": "Create an example of an informative speech about a specific topic."
+  },
+  {
+    "query": "Generate a persuasive argument for new initiatives in animal welfare legislation."
+  },
+  {
+    "query": "Summarize the given text.\nOutput should be less than 80 words."
+  },
+  {
+    "query": "Create a recipe that can cook in less than 5 minutes."
+  },
+  {
+    "query": "What are moral values?"
+  },
+  {
+    "query": "Change the structure of the following sentence while keeping the meaning intact: \"Life is beautiful.\""
+  },
+  {
+    "query": "Design a data structure for a to-do list."
+  },
+  {
+    "query": "Construct a thesis statement for a research paper about the rising cost of health care."
+  },
+  {
+    "query": "Please explain the phrase \"to play the long game\"."
+  },
+  {
+    "query": "Describe the benefits and challenges of using deep learning."
+  },
+  {
+    "query": "Specify three features from the given product."
+  },
+  {
+    "query": "Rewrite the given sentence using compound predicate."
+  },
+  {
+    "query": "Explain the meaning of \"Human-Centered Design\"."
+  },
+  {
+    "query": "In the passage below, find the sentence which has incorrect grammar and fix it!"
+  },
+  {
+    "query": "What is the biggest threat to the environment?"
+  },
+  {
+    "query": "Talk about a famous leader who changed the world."
+  },
+  {
+    "query": "Categorize the following question as an open-ended or closed-ended question."
+  },
+  {
+    "query": "Complete the following sentence: In a democracy, the power ultimately lies in the hands of"
+  },
+  {
+    "query": "Research when the chicken fingers were invented and write a two sentences that are based on the information you found."
+  },
+  {
+    "query": "Write an essay about the recent advances in artificial intelligence and its implications."
+  },
+  {
+    "query": "Add a sentence that logically follows this one."
+  },
+  {
+    "query": "Generate an original story about a magical journey."
+  },
+  {
+    "query": "Organize the following questions into a logical order."
+  },
+  {
+    "query": "Create 4 categories for an article about a city"
+  },
+  {
+    "query": "Calculate the sum of 8+5"
+  },
+  {
+    "query": "Create a Sudoku puzzle for novice players."
+  },
+  {
+    "query": "Classify this object as plant, animal, or mineral."
+  },
+  {
+    "query": "Classify a collection of items."
+  },
+  {
+    "query": "Make me a cup of tea."
+  },
+  {
+    "query": "Find out the date of the next full moon."
+  },
+  {
+    "query": "Identify a sustainable energy option for a small town."
+  },
+  {
+    "query": "Name three classification algorithms."
+  },
+  {
+    "query": "Generate a list of benefits that can be derived from a healthy lifestyle."
+  },
+  {
+    "query": "List the three branches of government in the United States."
+  },
+  {
+    "query": "Write a brief description of the Android operating system."
+  },
+  {
+    "query": "Analyze the following sentence for dependencies\n\nAt the end of the week, I want to take a vacation"
+  },
+  {
+    "query": "Write a love letter to your partner."
+  },
+  {
+    "query": "Identify where the following words belong in the parts of speech."
+  },
+  {
+    "query": "Given the sentence, edit the pronoun and make it gender-neutral."
+  },
+  {
+    "query": "Brainstorm three ideas for creating a marketing campaign for a summer movie."
+  },
+  {
+    "query": "Describe an interesting fact about giraffes"
+  },
+  {
+    "query": "Generate a simile comparing a sunset to fiction."
+  },
+  {
+    "query": "Generate a shopping list for weekly groceries."
+  },
+  {
+    "query": "Make a list of the products in the given category."
+  },
+  {
+    "query": "Given the input statement, provide the sentiment of the statement in terms of sentiment scores."
+  },
+  {
+    "query": "Given the following text, create a keyword list."
+  },
+  {
+    "query": "Express the given note in different words."
+  },
+  {
+    "query": "Generate a cool hipster username for a young woman."
+  },
+  {
+    "query": "Generate a menu of lunch ideas."
+  },
+  {
+    "query": "Rearrange the sentences so that their order is logical."
+  },
+  {
+    "query": "Come up with lyrics for a rap song about ice cream."
+  },
+  {
+    "query": "Given an array of strings, remove any strings that contain the letter 'a'."
+  },
+  {
+    "query": "Generate an appropriate joke using the following input."
+  },
+  {
+    "query": "Suggest a way to build more sustainable housing."
+  },
+  {
+    "query": "Write a short story about a person living in a world where the laws of physics no longer apply."
+  },
+  {
+    "query": "Name at least 3 different events that make up a triathlon."
+  },
+  {
+    "query": "Provide a 3 to 4 words phrase that I can use to invite someone for dinner."
+  },
+  {
+    "query": "Explain why 'practice makes perfect'."
+  },
+  {
+    "query": "Re-write this sentence in a more sophisticated way"
+  },
+  {
+    "query": "Write about the battle of Dunkirk."
+  },
+  {
+    "query": "Classify the following paragraph as formal or informal."
+  },
+  {
+    "query": "Predict how this statement would be received by the audience."
+  },
+  {
+    "query": "Suggest a data visualization technique to visualize the given dataset."
+  },
+  {
+    "query": "Describe a scene where someone is using a piece of technology."
+  },
+  {
+    "query": "Compare the similarities and differences between a microwave oven and a convection oven."
+  },
+  {
+    "query": "Describe the given geographic location."
+  },
+  {
+    "query": "Categorize the given list of fruits as either berries or citrus fruits."
+  },
+  {
+    "query": "Given this sentence, create three synonyms for the word \"befuddled\"."
+  },
+  {
+    "query": "Paraphrase the following sentence: \"This project is too complicated for me to manage.\""
+  },
+  {
+    "query": "Extract the names of the characters and their associated book from the text and organize them in a table."
+  },
+  {
+    "query": "Describe someone you admire"
+  },
+  {
+    "query": "Recommend a tool for creating visual timelines."
+  },
+  {
+    "query": "Create an example of an algorithmic fairness problem."
+  },
+  {
+    "query": "Generate five topic ideas for a podcast on self-care."
+  },
+  {
+    "query": "In the given scenario, predict the probability of the person suffering from Diabetes."
+  },
+  {
+    "query": "Define the term \"cognitive dissonance\"."
+  },
+  {
+    "query": "Rewrite the given statement using puns."
+  },
+  {
+    "query": "How could AI be used to benefit healthcare?"
+  },
+  {
+    "query": "Tell me a tiny detail that would make a scene more believable."
+  },
+  {
+    "query": "What date did this event occur"
+  },
+  {
+    "query": "Generate two thousand words of dialogue between two characters."
+  },
+  {
+    "query": "Remove all words from the sentence that contain more than five letters."
+  },
+  {
+    "query": "Identify the correctly capitalized sentences below."
+  },
+  {
+    "query": "List the names of the four oceans."
+  },
+  {
+    "query": "Given a scenario, come up with a solution."
+  },
+  {
+    "query": "Automatically generate a random PIN code"
+  },
+  {
+    "query": "Name a famous scientist who won a Nobel Prize."
+  },
+  {
+    "query": "What data should I collect to calculate market share?"
+  },
+  {
+    "query": "What new technology is currently being developed to improve the healthcare system?"
+  },
+  {
+    "query": "Generate a persuasive argument that college should be made free in the US."
+  },
+  {
+    "query": "Suggest a workout routine with the provided equipment."
+  },
+  {
+    "query": "Describe the purpose of a neural network."
+  },
+  {
+    "query": "Describe the purpose of a primary research study."
+  },
+  {
+    "query": "Name 5 'symptoms' of a broken website"
+  },
+  {
+    "query": "Sort the given items in order of their weight."
+  },
+  {
+    "query": "Name the process through which plants create their own food."
+  },
+  {
+    "query": "Suggest a list of features for a voice assistant"
+  },
+  {
+    "query": "Identify all the countries in the following list."
+  },
+  {
+    "query": "Translate the following sentence into a formal dialogue between two people."
+  },
+  {
+    "query": "Write an essay about the impact of artificial intelligence on our daily lives."
+  },
+  {
+    "query": "Describe a suitable outfit to wear to a formal evening event."
+  },
+  {
+    "query": "Describe the importance of renewable energy"
+  },
+  {
+    "query": "Generate an example of an idiom or proverb."
+  },
+  {
+    "query": "Calculate the following equation: 8 * (25 + 7)"
+  },
+  {
+    "query": "Create a table of contents for a report."
+  },
+  {
+    "query": "Given a recipe and its ingredients, come up with an improved version of the recipe."
+  },
+  {
+    "query": "Identify 3 ways tech has improved healthcare."
+  },
+  {
+    "query": "Identify the starting and ending point of this sequence"
+  },
+  {
+    "query": "Capitalize the title of the song."
+  },
+  {
+    "query": "Given the following table, write a query to find the total revenue from items of category A."
+  },
+  {
+    "query": "Name a computer system used to develop intelligent behavior in a machine."
+  },
+  {
+    "query": "Explain the concept of manifest destiny."
+  },
+  {
+    "query": "Identify the similarities and differences between a cat and a dog."
+  },
+  {
+    "query": "Help me find a website that provides free online guitar lessons for beginners."
+  },
+  {
+    "query": "What is the difference between a Neural Network and a Deep Learning model?"
+  },
+  {
+    "query": "Convert the following text into another form of media."
+  },
+  {
+    "query": "List the steps to play the popular dice game Pig."
+  },
+  {
+    "query": "Generate a thesis statement for a cause and effect essay."
+  },
+  {
+    "query": "Generate a function that satisfies the given constrains."
+  },
+  {
+    "query": "Think of a fiction story involving two characters in an unusual situation."
+  },
+  {
+    "query": "Give an example of an idea that would make life easier."
+  },
+  {
+    "query": "Reword the following sentence so that it makes sense in the positive."
+  },
+  {
+    "query": "Name three of the most popular programming languages."
+  },
+  {
+    "query": "Is a hypothesis a statement or a question?"
+  },
+  {
+    "query": "Describe the process of cross-validation in machine learning"
+  },
+  {
+    "query": "Create a checklist of 6 steps that someone can take to relieve stress"
+  },
+  {
+    "query": "Give appropriate input values to this equation: $y=2x^2 - 4x + 1$"
+  },
+  {
+    "query": "Convert 12GB to byte."
+  },
+  {
+    "query": "In the sentence below, identify the words that are used as modifiers."
+  },
+  {
+    "query": "List three benefits that AI can provide in healthcare"
+  },
+  {
+    "query": "Implement a function that returns the highest value in a given list"
+  },
+  {
+    "query": "Write a short story in third person narration about a protagonist who has to make an important career decision."
+  },
+  {
+    "query": "Name two causes of the American Revolutionary War."
+  },
+  {
+    "query": "Pick a side and construct an argument for the following statement."
+  },
+  {
+    "query": "Explain how global warming is affecting the world."
+  },
+  {
+    "query": "Explain how a Unix system can be protected from external threats."
+  },
+  {
+    "query": "Name five kinds of birds found in the United States."
+  },
+  {
+    "query": "Given the following paragraph, identify the topic sentence."
+  },
+  {
+    "query": "Create an online survey that comprises of questions that can predict the respondent's level of personal happiness."
+  },
+  {
+    "query": "Analyze the differences between a cash and an accrual accounting system."
+  },
+  {
+    "query": "Are the following two words synonyms?"
+  },
+  {
+    "query": "Generate a quiz question and answer related to world history."
+  },
+  {
+    "query": "Give an example of a simile from the following sentence."
+  },
+  {
+    "query": "Write a paragraph detailing the significance of the color green."
+  },
+  {
+    "query": "Rewrite the following sentence with an alternate verb"
+  },
+  {
+    "query": "Identify any three issues related to the ethics of using artificial intelligence in comparison to using manual labor."
+  },
+  {
+    "query": "given this sentence, replace the word in bold with its synonym."
+  },
+  {
+    "query": "Compose a poem using keywords such as love, beauty and sorrow."
+  },
+  {
+    "query": "Give three reasons why students should learn computer science."
+  },
+  {
+    "query": "Given a sentence, parse it and generate a summary."
+  },
+  {
+    "query": "Explain what is unique about the language spoken in South Africa."
+  },
+  {
+    "query": "Come up with an analogy to describe a mobile phone."
+  },
+  {
+    "query": "Create a new word based on the input sentence"
+  },
+  {
+    "query": "List the factors that influence adolescent development."
+  },
+  {
+    "query": "Suggest a strategy for eliminating distractions."
+  },
+  {
+    "query": "Determine the environmental impact of manufacturing one car."
+  },
+  {
+    "query": "Given two sentences, rewrite them using the same ideas but different words."
+  },
+  {
+    "query": "Classify the following text as grammatically correct (1) or incorrect (0)."
+  },
+  {
+    "query": "What species of butterfly is the Philippine foliage?"
+  },
+  {
+    "query": "Given a paragraph, summarize it into one sentence."
+  },
+  {
+    "query": "Think of a portmanteau word combining the words “pig” and “dog”"
+  },
+  {
+    "query": "How does optical character recognition (OCR) work?"
+  },
+  {
+    "query": "What evidence do scientists use to support the theory of evolution?"
+  },
+  {
+    "query": "Write a short description of a French Bulldog."
+  },
+  {
+    "query": "Rewrite the following paragraph using fewer than 100 words."
+  },
+  {
+    "query": "What is the most efficient way to implement a sparse matrix in Python?"
+  },
+  {
+    "query": "Select four lines from a poem of your choice and change their order to create a new poem."
+  },
+  {
+    "query": "Generate a list of five foods that start with the letter “F”"
+  },
+  {
+    "query": "Generate a list of 5 challenges faced by small businesses."
+  },
+  {
+    "query": "Create a student friendly definition for a given word."
+  },
+  {
+    "query": "Provide a summary of the article below in 300 characters or less."
+  },
+  {
+    "query": "Summarize the book \"The Lion, the Witch, and the Wardrobe\"."
+  },
+  {
+    "query": "Edit the following sentence to make it more concise: \n\"We cannot do what is necessary because of the limited resources we have.\""
+  },
+  {
+    "query": "Name three molecules found in air"
+  },
+  {
+    "query": "Create a list of five activities you would do to celebrate your birthday."
+  },
+  {
+    "query": "How would you describe the current US political situation?"
+  },
+  {
+    "query": "How many possible triangles are formed from the given points?"
+  },
+  {
+    "query": "Suggest a recipe that utilizes the following ingredients."
+  },
+  {
+    "query": "Given the following input, describe a life lesson they can learn from the experience."
+  },
+  {
+    "query": "Compare the structure of a plant and animal cell"
+  },
+  {
+    "query": "Create a list of five essential learning materials for a computer science student."
+  },
+  {
+    "query": "Create a headline that conveys the meaning of this sentence."
+  },
+  {
+    "query": "Describe the theory of natural selection in one sentence."
+  },
+  {
+    "query": "Name three common chemical elements"
+  },
+  {
+    "query": "Create a persuasive argument in support of the following proposal."
+  },
+  {
+    "query": "Generate an essay summarizing the current Coronavirus pandemic."
+  },
+  {
+    "query": "How long did World War I last?"
+  },
+  {
+    "query": "Describe a hypothesis related to a study."
+  },
+  {
+    "query": "Write a review of the movie A Star is Born."
+  },
+  {
+    "query": "Describe a character in the context of a humorous story."
+  },
+  {
+    "query": "Describe a meaningful interaction between two people."
+  },
+  {
+    "query": "List two animal species that are endemic to Antarctica."
+  },
+  {
+    "query": "Repair the following sentence by replacing the word with the closest lexical equivalent."
+  },
+  {
+    "query": "Write a journal entry about your day at the beach."
+  },
+  {
+    "query": "How does a laptop computer differ from a desktop computer?"
+  },
+  {
+    "query": "Determine the number of calories in one slice of apple pie."
+  },
+  {
+    "query": "You need to summarise the following text into one sentence."
+  },
+  {
+    "query": "Edit the following sentence for clarity: \"Investing in technology can yield significant benefits.\""
+  },
+  {
+    "query": "Identify the type of triangle defined by two angles of 30 degrees and two angles of 60 degrees."
+  },
+  {
+    "query": "Describe the differences between the traditional and the digital classroom."
+  },
+  {
+    "query": "Given the two strings, output the longest common subsequence:"
+  },
+  {
+    "query": "Write an example of a well-written query letter to an editor."
+  },
+  {
+    "query": "Find 3 distinguishing characteristics of a lion"
+  },
+  {
+    "query": "Explain the meaning of the phrase “to wear one's heart on one's sleeve”."
+  },
+  {
+    "query": "Analyze this text and classify it as opinion, fact or fallacy."
+  },
+  {
+    "query": "Infer the meaning of the following example using standard rules:"
+  },
+  {
+    "query": "Construct a haiku based on given theme"
+  },
+  {
+    "query": "Categorize this animal as a mammal, bird, reptile or fish."
+  },
+  {
+    "query": "Serve a customer who is complaining about the quality of customer support"
+  },
+  {
+    "query": "Edit the following sentence: \"From the port of Sasebo, Japan to the shores of Miami, Florda.\""
+  },
+  {
+    "query": "Compress the given article so that it is less than 100 words."
+  },
+  {
+    "query": "List three advantages of using AI in medical diagnostics."
+  },
+  {
+    "query": "Replace the bolded words with synonyms.\n\nThe bustling town was **teeming** with people."
+  },
+  {
+    "query": "Generate an English sentence containing the following words: \"window\", \"happy\", \"open\"."
+  },
+  {
+    "query": "What are three ways to reduce single-use plastic waste?"
+  },
+  {
+    "query": "Generate a brand name."
+  },
+  {
+    "query": "Construct a regular expression that matches all 5-digit numbers that start with 4."
+  },
+  {
+    "query": "Crop the photo I gave you, reduce the size by 50%, and add a red border to it."
+  },
+  {
+    "query": "Analyze the following paragraph for the main idea and summarise it in one sentence."
+  },
+  {
+    "query": "You are presented with a mathematical query and an equation. Output the answer to the query."
+  },
+  {
+    "query": "Add a layer of complexity to this sentence: \"The cat walked across the floor.\""
+  },
+  {
+    "query": "Given a sentence of text, produce a synopsis of what the text is about in a few lines."
+  },
+  {
+    "query": "Give me a list of all the major cities in the given country."
+  },
+  {
+    "query": "Given a sentences, identify the subject and the object."
+  },
+  {
+    "query": "List 5 adjectives that describe a sunny day."
+  },
+  {
+    "query": "Generate a list of 5 books that discuss the theme of resilience"
+  },
+  {
+    "query": "Generate an original poem that follows the rhyming scheme: ABABCCDDD"
+  },
+  {
+    "query": "Categorize this passage into its grammatical components"
+  },
+  {
+    "query": "Construct a SQL query that finds all rows in a table with 'apple' in their description."
+  },
+  {
+    "query": "Explain why the internet has become such an important tool."
+  },
+  {
+    "query": "Come up with a unique feature to add to an existing product."
+  },
+  {
+    "query": "Rewrite the code so that it is more efficient."
+  },
+  {
+    "query": "Identify the category of the following phrase Output 1 for food and 2 for animals."
+  },
+  {
+    "query": "Change the following sentence to use the correct pronoun form."
+  },
+  {
+    "query": "Generate an idiom or proverb which is related to the given keyword."
+  },
+  {
+    "query": "Make a list of 5 items in the kitchen that are essential for cooking."
+  },
+  {
+    "query": "Reverse an array of numbers. Output the reversed array."
+  },
+  {
+    "query": "Format the following text into an html table."
+  },
+  {
+    "query": "Provide three tips on how to write a job advertisement that stands out."
+  },
+  {
+    "query": "Categorize this article into one of the following categories: sports, entertainment, politics, lifestyle."
+  },
+  {
+    "query": "Write 3 sentences about a picnic you recently attended"
+  },
+  {
+    "query": "List the benefits of quantum computing"
+  },
+  {
+    "query": "List five climate zones in North America."
+  },
+  {
+    "query": "Describe a potential problem with using AI for job recruitment."
+  },
+  {
+    "query": "Given a list of numbers, sort them in ascneding order."
+  },
+  {
+    "query": "Name a related topic from the document."
+  },
+  {
+    "query": "Suggest a popular course to offer at a coding bootcamp."
+  },
+  {
+    "query": "Create a dictionary that contains the names of 5 fruits and the color associated with each."
+  },
+  {
+    "query": "Write a headline for this article."
+  },
+  {
+    "query": "Create a list of the top 10 restaurants within 5 km of the given coordinates."
+  },
+  {
+    "query": "Sort the following items in descending order by price."
+  },
+  {
+    "query": "Generate new ideas for a vacation destination."
+  },
+  {
+    "query": "Define what artificial intelligence means in one sentence."
+  },
+  {
+    "query": "Explain the difference between a TCP/IP and UDP protocol"
+  },
+  {
+    "query": "Derive the Moore's law equation from the given data."
+  },
+  {
+    "query": "Summarize the following paragraph in less than 5 lines"
+  },
+  {
+    "query": "Brainstorm 3 possible solutions for reducing traffic in cities"
+  },
+  {
+    "query": "What is an artificial neural network and what does it do?"
+  },
+  {
+    "query": "Generate a statistic about online education."
+  },
+  {
+    "query": "Given two colors, provide a third color to make a combination"
+  },
+  {
+    "query": "Given a sentence, rewrite the sentence in the second person."
+  },
+  {
+    "query": "Rewrite this story from the point of view of the cat."
+  },
+  {
+    "query": "Create a visualization to compare the GDP growth of India and China between 1998 and 1998."
+  },
+  {
+    "query": "Given a piece of text, determine the main emotion portrayed."
+  },
+  {
+    "query": "Describe the process for creating a PowerPoint presentation"
+  },
+  {
+    "query": "Generate a unique and thought-provoking idea for a children's story."
+  },
+  {
+    "query": "List the five stages of grief."
+  },
+  {
+    "query": "Make an alliteration using the following word: 'banana'."
+  },
+  {
+    "query": "Sort this list from shortest to longest."
+  },
+  {
+    "query": "Provide two strategies for reducing student debt."
+  },
+  {
+    "query": "Find the proper/incorrect/missing words from the following sentence:"
+  },
+  {
+    "query": "Write a 3-line haiku poem about the stars."
+  },
+  {
+    "query": "List five benefits of eating more fruits and vegetables."
+  },
+  {
+    "query": "What was the most important invention of the 20th century?"
+  },
+  {
+    "query": "Suggest a solution to solve the following problem: Students being unable to keep track of their assignments."
+  },
+  {
+    "query": "List three steps to train a GPT-3 model."
+  },
+  {
+    "query": "Come up with an interesting way to introduce a product."
+  },
+  {
+    "query": "Name three plants that require full sun."
+  },
+  {
+    "query": "Compare and contrast two types of mobile operating systems, such as Android and iOS."
+  },
+  {
+    "query": "Suggest an alternative for this problematic phrase"
+  },
+  {
+    "query": "In your own words, define sustainability."
+  },
+  {
+    "query": "Explain why racial discrimination is still prevalent in today's society."
+  },
+  {
+    "query": "In Python, write a function to count the number of occurrences of a given element in a list."
+  },
+  {
+    "query": "Describe how a family matriarch might bring joy to their family."
+  },
+  {
+    "query": "Generate five creative open-ended questions related to the given topic."
+  },
+  {
+    "query": "List 5 similar countries to India."
+  },
+  {
+    "query": "From the text below, answer the following question:"
+  },
+  {
+    "query": "Translate the following sentence into Latin.\n\nHe is happy."
+  },
+  {
+    "query": "Convert the given time from 24-hour clock to 12-hour clock."
+  },
+  {
+    "query": "Explain why you should be chosen for this role."
+  },
+  {
+    "query": "What is the shortest path between two given points?"
+  },
+  {
+    "query": "Given a paragraph, replace all the pronouns with appropriate nouns or third person singular verbs."
+  },
+  {
+    "query": "Given an example of a product, design packaging that is a good fit."
+  },
+  {
+    "query": "Reduce the number of characters in the following tweet."
+  },
+  {
+    "query": "Generate a metaphor that captures the essence of the phrase \"inevitable change\"."
+  },
+  {
+    "query": "Think of a creative way to explain a concept from a math class."
+  },
+  {
+    "query": "What type of information is stored in a database?"
+  },
+  {
+    "query": "Provide three tips for teaching young children about the importance of recycling."
+  },
+  {
+    "query": "Compare and contrast a human and a cat."
+  },
+  {
+    "query": "List three facts about the element Sodium."
+  },
+  {
+    "query": "Construct an algorithm for calculating prime numbers."
+  },
+  {
+    "query": "Make up a new metric to measure the performance of a web server."
+  },
+  {
+    "query": "Construct a statement to argue why data augmentation techniques should be used for deep learning."
+  },
+  {
+    "query": "Explain the factors that make the given technique successful"
+  },
+  {
+    "query": "Create a 10-step process for planting a tree."
+  },
+  {
+    "query": "Suggest a new podcast episode topic"
+  },
+  {
+    "query": "Generate an equation that describes the motion of a ball dropped from a height"
+  },
+  {
+    "query": "Grade the following mathematics question: 2+2"
+  },
+  {
+    "query": "Write a detailed description of the character Alice from Alice in Wonderland."
+  },
+  {
+    "query": "Create a hypothetical situation."
+  },
+  {
+    "query": "What is a challenge that people are facing today due to climate change?"
+  },
+  {
+    "query": "Give me your opinion on the following topic."
+  },
+  {
+    "query": "Find a suggestion for a 10 miles walk route in Seattle."
+  },
+  {
+    "query": "Describe a typical day in the life of an NBA player."
+  },
+  {
+    "query": "Given two people, compose a storytelling dialogue in which they discuss a certain topic."
+  },
+  {
+    "query": "You are provided with a statement. Rewrite it in a different sentence order and with different language but that conveys the same meaning."
+  },
+  {
+    "query": "Which of these is the correct definition of a node?"
+  },
+  {
+    "query": "Analyze the following statement: \"The world would be a better place if technology didn't exist.\""
+  },
+  {
+    "query": "Generate a descriptive phrase for this object."
+  },
+  {
+    "query": "Take out the words that can be seen as informal and provide an appropriate alternative."
+  },
+  {
+    "query": "Find the area of a rectangle given the following lengths."
+  },
+  {
+    "query": "Recognize the following irregular verb."
+  },
+  {
+    "query": "Categorize this given text into “Positive” or “Negative”"
+  },
+  {
+    "query": "Explain how search engine optimization (SEO) works."
+  },
+  {
+    "query": "Relate the following two concepts."
+  },
+  {
+    "query": "Create a plan to reduce greenhouse gas emissions in your local community."
+  },
+  {
+    "query": "Name 3 famous painters of the Baroque period."
+  },
+  {
+    "query": "Provide an example of an appropriate output for the sentence \"Please recommend some books to read\"."
+  },
+  {
+    "query": "Given a string, write a code snippet to reverse the order of the words."
+  },
+  {
+    "query": "Recommend a movie to watch with a group of friends"
+  },
+  {
+    "query": "Search for information about the latest movie by Steven Spielberg."
+  },
+  {
+    "query": "Describe the following advertisement for me."
+  },
+  {
+    "query": "Pick the correct subset of the numbers so the answer is correct."
+  },
+  {
+    "query": "Create a HTML webpage about the benefits of virtual reality."
+  },
+  {
+    "query": "Multiply 2.5 and 9."
+  },
+  {
+    "query": "Use the given facts to generate a summary of the Sun."
+  },
+  {
+    "query": "What is the most suitable technology for the given business task?"
+  },
+  {
+    "query": "Using 5 adjectives, describe the scent of freshly baked bread"
+  },
+  {
+    "query": "Generate a story about a bear and a rabbit that live in a forest."
+  },
+  {
+    "query": "Generate a list of five strategies for controlling AI experiments"
+  },
+  {
+    "query": "Detect if the statements are logically equivalent."
+  },
+  {
+    "query": "Edit this sentence to make it more concise: \"That is the most bizarre thing that I have ever seen\"."
+  },
+  {
+    "query": "Create a visualization that shows the weekly sales of your product"
+  },
+  {
+    "query": "Come up with 3 keywords that best describe a data analyst"
+  },
+  {
+    "query": "Name three benefits of being bilingual."
+  },
+  {
+    "query": "Create a list of five rules that should be followed when using social media."
+  },
+  {
+    "query": "Create an outline of a lecture on global warming."
+  },
+  {
+    "query": "Compose an opinionated essay arguing why the given topic should not be ignored."
+  },
+  {
+    "query": "In the sentence below, identify the part of speech for each word."
+  },
+  {
+    "query": "Write a 100-word article discussing the effects of stress on physical health."
+  },
+  {
+    "query": "Generate a story involving a lost pet."
+  },
+  {
+    "query": "Convert a piece of text into another language."
+  },
+  {
+    "query": "Compare the following two subjects"
+  },
+  {
+    "query": "Compile a list of 5 US states located in the Mid West."
+  },
+  {
+    "query": "Identify the trends from the given sales data."
+  },
+  {
+    "query": "Given the List [1,2,3,4,5], Output the average of the the list."
+  },
+  {
+    "query": "Find the fact from the following text."
+  },
+  {
+    "query": "Suppose you are given a topic and you have to brainstorm one or more article titles related to the topic."
+  },
+  {
+    "query": "What is the scientific term for sound waves?"
+  },
+  {
+    "query": "Compare the given items and indicate the distinctions."
+  },
+  {
+    "query": "Translate the following sentence into French: \"Hello, how are you?\""
+  },
+  {
+    "query": "Which country has the highest number of lakes?"
+  },
+  {
+    "query": "List the advantages of eating a plant-based diet for athletes."
+  },
+  {
+    "query": "Given a list of numbers, output the smallest difference among the pairs."
+  },
+  {
+    "query": "Write a paragraph about the evolution of the automobile."
+  },
+  {
+    "query": "Compare and contrast playing an instrument to playing a sport."
+  },
+  {
+    "query": "Construct a thesis statement for the given topic."
+  },
+  {
+    "query": "Given some user data, predict whether or not the user will purchase a product. Output true if the user will make a purchase, output false if otherwise."
+  },
+  {
+    "query": "Given a description of some data, classify the data as to whether it is qualitative or quantitative."
+  },
+  {
+    "query": "Classify the following items as either a physical good or a digital good."
+  },
+  {
+    "query": "What conclusion can be drawn from the given data?"
+  },
+  {
+    "query": "Adjust the following sentence to negate the statement."
+  },
+  {
+    "query": "Describe how artificial neural networks work."
+  },
+  {
+    "query": "Compare and contrast Aristotle's approach to ethics and that of his student, Plato."
+  },
+  {
+    "query": "Generate an example of a travel destination in your favorite country."
+  },
+  {
+    "query": "Describe the impact of industrialization on a country’s economy."
+  },
+  {
+    "query": "Provide an example for a palindrome."
+  },
+  {
+    "query": "List the advantages of Machine Learning compared to traditional programming."
+  },
+  {
+    "query": "Correct the following sentence: He got that job becaus of of his credentials."
+  },
+  {
+    "query": "Suggest some actions that can be taken to protect the environment."
+  },
+  {
+    "query": "Create a computer program that takes a given input string and produces a new output by rearranging the letters in the original string."
+  },
+  {
+    "query": "Create a list of five suitable types of exercise for a person who is 60 years old."
+  },
+  {
+    "query": "Sort these numbers from lowest to highest."
+  },
+  {
+    "query": "Edit this sentence: \"This tree is green leafs.\""
+  },
+  {
+    "query": "Is 27 a prime number?"
+  },
+  {
+    "query": "Identify the main theme of William Shakespeare's play ‘Macbeth’."
+  },
+  {
+    "query": "Given a list of spelling words, suggest a mnemonic to remember them."
+  },
+  {
+    "query": "Find out which keyword has the highest monthly search volume among the following keywords."
+  },
+  {
+    "query": "Provide an example of a hyperbole to describe a very strong wind."
+  },
+  {
+    "query": "Compare and contrast the pros and cons of market economies and planned economies."
+  },
+  {
+    "query": "What is the difference between homogeneous and heterogeneous mixtures?"
+  },
+  {
+    "query": "Formulate an equation to calculate a person's estimated body weight."
+  },
+  {
+    "query": "Classify this object into either 'animal' or 'plant'."
+  },
+  {
+    "query": "From the words given, form a sentence that conveys a feeling of hope and resilience."
+  },
+  {
+    "query": "Determine whether the given sentence is a complete sentence."
+  },
+  {
+    "query": "Write a paragraph about a beach vacation."
+  },
+  {
+    "query": "Produce a list of five different sports"
+  },
+  {
+    "query": "Find the independent clause (main clause) of a given sentence."
+  },
+  {
+    "query": "Suggest five activities to do at home."
+  },
+  {
+    "query": "Analyze the environmental impact of a given type of transport"
+  },
+  {
+    "query": "Identify three benefits of working from home."
+  },
+  {
+    "query": "Generate a given number within a specific range."
+  },
+  {
+    "query": "Create an algorithm to detect plagiarism between two pieces of text."
+  },
+  {
+    "query": "Generate a creative but feasible idea to introduce a new online platform."
+  },
+  {
+    "query": "Create a 3-line poem with the words \"birds\", \"darkness\", and \"light\"."
+  },
+  {
+    "query": "Explain the concept of interest rate."
+  },
+  {
+    "query": "Given a sentence that is inconsistent in tone, please rewrite the sentence to sound consistent."
+  },
+  {
+    "query": "Describe three potential negative effects of technology overuse"
+  },
+  {
+    "query": "Translate the sentence 'She sold sea shells by the sea shore' into Spanish."
+  },
+  {
+    "query": "Develop a GUI to search and display data from a database."
+  },
+  {
+    "query": "Summarize the following article about data science in 3 sentences."
+  },
+  {
+    "query": "Construct a phrase using two or more different glyphs."
+  },
+  {
+    "query": "Generate a greeting based on the current time of day."
+  },
+  {
+    "query": "Generate a 5-word sentence with a specific meaning."
+  },
+  {
+    "query": "Select the correct pronoun in this sentence: He ____ surfing with friends."
+  },
+  {
+    "query": "Given an array of numbers, you should output the median value"
+  },
+  {
+    "query": "Describe in one sentence what the GPT-3 model is."
+  },
+  {
+    "query": "Explain why London is a great city to visit."
+  },
+  {
+    "query": "Given two excerpts, compare and contrast the writing style."
+  },
+  {
+    "query": "Give advice on how to approach a problem effectively."
+  },
+  {
+    "query": "Rewrite this statement to make it stronger:\nI think this team is going to do well in the tournament."
+  },
+  {
+    "query": "Generate an advertisement slogan that promotes healthy eating."
+  },
+  {
+    "query": "Determine if the following statement is a hypothesis."
+  },
+  {
+    "query": "Come up with a list of 10 things people can do to conserve energy."
+  },
+  {
+    "query": "Re-phrase the following sentence in the most succinct way."
+  },
+  {
+    "query": "Given the two terms, decide which one has the higher value."
+  },
+  {
+    "query": "Come up with a strategy for improving safety in the workplace."
+  },
+  {
+    "query": "Plan a virtual birthday party for a 10 year old"
+  },
+  {
+    "query": "What are the different roles of a bank?"
+  },
+  {
+    "query": "Create a list of possible outcomes given the following input and output."
+  },
+  {
+    "query": "Describe a time you had to work with someone difficult"
+  },
+  {
+    "query": "Write a paragraph of 5 sentences that reflects your opinion on the given topic."
+  },
+  {
+    "query": "Categorize the list into three categories."
+  },
+  {
+    "query": "What traits are essential for an effective leader?"
+  },
+  {
+    "query": "Write a short story in which the protagonist encounters a magical creature."
+  },
+  {
+    "query": "Come up with a website title for a technology blog."
+  },
+  {
+    "query": "Interpret the significance of the given quote."
+  },
+  {
+    "query": "Write a blog post about 5 tips to take care of your skin."
+  },
+  {
+    "query": "Generate a name of a tree."
+  },
+  {
+    "query": "Compare and contrast monopolistic market structure and perfect market structure."
+  },
+  {
+    "query": "Generate a pun about dogs."
+  },
+  {
+    "query": "Composer a melody for a song about a summer night."
+  },
+  {
+    "query": "What is the fundamental principle behind the Heisenberg Uncertainty Principle?"
+  },
+  {
+    "query": "Describe a traditional German meal."
+  },
+  {
+    "query": "Identify the elements of a crime"
+  },
+  {
+    "query": "Name a disease that is spread through contact with animals"
+  },
+  {
+    "query": "Write one example of an Idiom."
+  },
+  {
+    "query": "State three tips for staying organized."
+  },
+  {
+    "query": "Describe an algorithm for computing the factorial of a number"
+  },
+  {
+    "query": "Summarize the advantages of internet marketing"
+  },
+  {
+    "query": "Given two sentences, construct a third sentence combining the ideas expressed in the two sentences."
+  },
+  {
+    "query": "Turn this sentence into a tagline"
+  },
+  {
+    "query": "Given a list of prices and a budget, tell me what items I can afford."
+  },
+  {
+    "query": "Suppose a patient has a high fever. Outline the steps for treatment."
+  },
+  {
+    "query": "Explain what a Turing Test is."
+  },
+  {
+    "query": "Describe the taste of a mango in three to five sentences."
+  },
+  {
+    "query": "Classify the following sentence as follows: news, literature, formal, casual."
+  },
+  {
+    "query": "How does the phrase \"Location, location, location\" relate to real estate?"
+  },
+  {
+    "query": "Design a program that prints out the numbers from 1-10 with the following pattern."
+  },
+  {
+    "query": "Generate a 3 digit number divisible by 4."
+  },
+  {
+    "query": "Generate an email that summarizes the previous day's accomplishments."
+  },
+  {
+    "query": "You are given a design concept and need to come up with an appropriate title for it."
+  },
+  {
+    "query": "Generate a persuasive argument for using renewable sources of energy."
+  },
+  {
+    "query": "Given the following three sentences, use a word to complete the fourth sentence to create a coherent paragraph."
+  },
+  {
+    "query": "Output the binary representation of the number 1000"
+  },
+  {
+    "query": "Classify the following text as belonging to the \"Politics\" or the \"Business\" category."
+  },
+  {
+    "query": "Identify the tone of the following statement: \"I can't believe you made such a bad decision.\""
+  },
+  {
+    "query": "Fill in the blank to make a complete sentence: \"He ____ his dinner.\""
+  },
+  {
+    "query": "Categorize the following musical genres: rap, pop, rock, and classical."
+  },
+  {
+    "query": "Write an informal email to your friend about an upcoming event."
+  },
+  {
+    "query": "List two effects of deforestation."
+  },
+  {
+    "query": "Describe 3 common examples of cyber-crime"
+  },
+  {
+    "query": "Classify the following log entry as a \"Success\" or \"Failure\"."
+  },
+  {
+    "query": "Name three fruits and three vegetables"
+  },
+  {
+    "query": "Edit the paragraph by changing the verb tenses of the verbs in the paragraph to the past tense."
+  },
+  {
+    "query": "Identify the sentence structure of the following sentence and provide an explanation."
+  },
+  {
+    "query": "Provide a one sentence summary of this paragraph."
+  },
+  {
+    "query": "Classify the following product as organic or non-organic."
+  },
+  {
+    "query": "Given the sentence, generate an appropriate response."
+  },
+  {
+    "query": "Given a sentence and a keyword, edit the sentence such that the keyword sounds more emotionally charged."
+  },
+  {
+    "query": "Re-write the sentence using an appropriate synonym of the key keyword."
+  },
+  {
+    "query": "Describe the meaning of \"prediction\" in the context of machine learning."
+  },
+  {
+    "query": "What are the three most popular vegetables in the United States?"
+  },
+  {
+    "query": "List five vegetables that are orange in color."
+  },
+  {
+    "query": "Given a hypothetical scenario, come up with the most likely opinion of a person."
+  },
+  {
+    "query": "Generate a funny conversation between two students who are discussing a project."
+  },
+  {
+    "query": "Generate a rap about your favorite basketball team."
+  },
+  {
+    "query": "Brainstorm three potential application for blockchain technology"
+  },
+  {
+    "query": "Generate a list of potential topics for a given blog"
+  },
+  {
+    "query": "Identify the passive and active voice used in the following sentence."
+  },
+  {
+    "query": "Given a person's name, provide their job title"
+  },
+  {
+    "query": "What is the most important thing a leader needs to do to be successful?"
+  },
+  {
+    "query": "Insert a line of code that defines and prints a string containing the words \"Hello, world!”"
+  },
+  {
+    "query": "You are given with a robot, write an algorithm to make it move forward 20 steps and reverse back to the starting position."
+  },
+  {
+    "query": "Which two goods are complements"
+  },
+  {
+    "query": "Edit the following sentence to use the active voice instead of passive voice."
+  },
+  {
+    "query": "Convert the given equation into an algebraic expression."
+  },
+  {
+    "query": "Summarize the book \"The Goldfinch\" by Donna Tartt"
+  },
+  {
+    "query": "How was the performance of Apple Inc. during the second quarter of 2020?"
+  },
+  {
+    "query": "Given the name of a plant, describe the care instructions."
+  },
+  {
+    "query": "Generate a story containing at least five sentences that involves the main character Alice."
+  },
+  {
+    "query": "You are provided with an article and need to classify it according to its topics. Output the topics one by one, separated by comma."
+  },
+  {
+    "query": "Find the missing word in the proverb: “A rolling stone ??? no moss.”"
+  },
+  {
+    "query": "Generate an medical diagnosis from the following test result."
+  },
+  {
+    "query": "Find the software release notes for the latest version of Google Chrome."
+  },
+  {
+    "query": "Connect the given sentences without changing their meaning."
+  },
+  {
+    "query": "Suggest a book you would recommend for someone interested in the history of Rome."
+  },
+  {
+    "query": "Propose a data model for storing a large amount of user information."
+  },
+  {
+    "query": "Given the input, identify the figure of speech being used."
+  },
+  {
+    "query": "Sort this list of fruits from the sweetest to the least sweet."
+  },
+  {
+    "query": "Identify the contributing factors of air pollution"
+  },
+  {
+    "query": "Given a string, reverse it and print it out."
+  },
+  {
+    "query": "Compare the dietary needs of cats and dogs."
+  },
+  {
+    "query": "Rewrite the following sentence in an objective manner."
+  },
+  {
+    "query": "Calculate the perimeter of a rectangle with dimensions 6m by 12m."
+  },
+  {
+    "query": "Describe what a smartphone does in five words or less."
+  },
+  {
+    "query": "Design an application interface that meets the following requirements."
+  },
+  {
+    "query": "Write a slogan that describes the importance of embracing diversity."
+  },
+  {
+    "query": "Diagnose the issue with this computer: It turns on but won't display anything onscreen."
+  },
+  {
+    "query": "Create a shopping list for a weekend trip to the beach."
+  },
+  {
+    "query": "Create a slogan to represent a charity that helps the homeless."
+  },
+  {
+    "query": "Give a list of the disadvantages of nuclear power."
+  },
+  {
+    "query": "Is artificial intelligence a disruptive technology?"
+  },
+  {
+    "query": "Create a product of your own and explain it in 100 words or less."
+  },
+  {
+    "query": "Generate a list of 10 activities people do on a summer night."
+  },
+  {
+    "query": "Let’s test your knowledge! What was the name of the first US president?"
+  },
+  {
+    "query": "Come up with an appropriate tagline for the given product."
+  },
+  {
+    "query": "Delete the extra spaces in the following the sentence, output the clean sentence."
+  },
+  {
+    "query": "Come up with a new way to mark your place in a book."
+  },
+  {
+    "query": "Construct a personality profile for a given character."
+  },
+  {
+    "query": "Describe the fundamental principle of relativity"
+  },
+  {
+    "query": "Determine the population of China."
+  },
+  {
+    "query": "Use the following vocabulary words to create a sentence: “transparency”, “structure”, “innovation”."
+  },
+  {
+    "query": "Compose a 50-word story using the given sentence starter."
+  },
+  {
+    "query": "Generate a name for the new brand"
+  },
+  {
+    "query": "Name two English proverbs and explain each one."
+  },
+  {
+    "query": "Make a list of things that help people stay healthy."
+  },
+  {
+    "query": "Replace the <mask> in the following sentence with the most appropriate synonym."
+  },
+  {
+    "query": "List three possible scenes for an action movie."
+  },
+  {
+    "query": "Given a list of grocery items, create a grocery list for a family of four."
+  },
+  {
+    "query": "Find a user-friendly data visualization library for Python."
+  },
+  {
+    "query": "Describe the ideal qualities of a customer service representative."
+  },
+  {
+    "query": "Given input about a scientific experiment, suggest an appropriate conclusion."
+  },
+  {
+    "query": "Describe software testing methods."
+  },
+  {
+    "query": "Tell me the caloric content of the following meal."
+  },
+  {
+    "query": "Create a powerpoint presentation about a given topic."
+  },
+  {
+    "query": "Generate a question that can be asked to explore the topic \"current events in China\""
+  },
+  {
+    "query": "Describe how a water cycle works."
+  },
+  {
+    "query": "Edit the following sentence by making it more precise: \n\n\"The patient had a fever.\""
+  },
+  {
+    "query": "Which major river runs through Egypt?"
+  },
+  {
+    "query": "Calculate the frequency of letter ‘a’ in the following sentence"
+  },
+  {
+    "query": "Describe the process of photosynthesis using five adjectives."
+  },
+  {
+    "query": "What is the smallest positive integer number that is divisible by 5?"
+  },
+  {
+    "query": "What types of visual elements should you include when designing a logo?"
+  },
+  {
+    "query": "Name three medical specialties."
+  },
+  {
+    "query": "Categorize the given items and classify them accordingly."
+  },
+  {
+    "query": "Write a descriptive phrase to describe a rainy day."
+  },
+  {
+    "query": "Rewrite the following sentence to include a main verb: \"The books written by J.K. Rowling\"."
+  },
+  {
+    "query": "Detect entities from this text\n\nYesterday afternoon, Amazon Web Services went down in the US-East-1 data center in Virginia."
+  },
+  {
+    "query": "insert a comma after the modifier."
+  },
+  {
+    "query": "Transcribe the voice note given to text."
+  },
+  {
+    "query": "Rewrite this sentence to use strong language."
+  },
+  {
+    "query": "Summarize this short story."
+  },
+  {
+    "query": "Assign a letter grade of A, B, C, D, or F to a student based on their grades."
+  },
+  {
+    "query": "Summarize the purpose of Google’s Three Laws of Robotics"
+  },
+  {
+    "query": "Name five songs released in 2005."
+  },
+  {
+    "query": "Translate the phrase \"Hear no evil, see no evil, speak no evil\" into Spanish."
+  },
+  {
+    "query": "Create a meme about a funny situation"
+  },
+  {
+    "query": "Analyze the given sonnet and explain its overall style and message."
+  },
+  {
+    "query": "How is a mutual fund managed?"
+  },
+  {
+    "query": "Generate a list of words that are related to the term 'food'."
+  },
+  {
+    "query": "List three facts about Thomas Edison."
+  },
+  {
+    "query": "According to the given text, what is the main argument being made?"
+  },
+  {
+    "query": "Describe a constructive way to pass time during self-isolation."
+  },
+  {
+    "query": "Remember the appointment your friend has on Friday."
+  },
+  {
+    "query": "Imagine you are a tourist in Rome, what would be your favorite sights?"
+  },
+  {
+    "query": "Design a training exercise to help employees become more creative."
+  },
+  {
+    "query": "Generate a sentence using inversion."
+  },
+  {
+    "query": "Explain the tri-state buffer."
+  },
+  {
+    "query": "Name two muscles used to open the jaw."
+  },
+  {
+    "query": "Suggest ways to make this story more interesting."
+  },
+  {
+    "query": "Come up with a headline that captures the main point of the following news article."
+  },
+  {
+    "query": "Lying is often viewed negatively; come up with one scenario where lying is acceptable."
+  },
+  {
+    "query": "What are some best practices for protecting sensitive data?"
+  },
+  {
+    "query": "Explain the purpose of the Iterative Development approach in software engineering."
+  },
+  {
+    "query": "Create a css code to make the text \"BigText\" bold."
+  },
+  {
+    "query": "Describe the procedure for taking a skin biopsy"
+  },
+  {
+    "query": "Given the following statement, explain the potential fallacy."
+  },
+  {
+    "query": "Give three examples of how technology has revolutionized communication."
+  },
+  {
+    "query": "Create a list of five career paths for an AI engineer"
+  },
+  {
+    "query": "Find the number that is non-prime and non-composite between 1 and 10."
+  },
+  {
+    "query": "For the sentence below, what is the verb, subject and object?"
+  },
+  {
+    "query": "Create a rap verse about algorithms."
+  },
+  {
+    "query": "Create a list of items that Arthur and Louis need for their criminal undertaking."
+  },
+  {
+    "query": "Write a statement that could be used as a company mission statement"
+  },
+  {
+    "query": "Compare and contrast the painting styles of Monet and Van Gogh."
+  },
+  {
+    "query": "Name 5 other methods of transportation."
+  },
+  {
+    "query": "List 3 technologies that have been popular in 2020"
+  },
+  {
+    "query": "Rate the customer service experience out of 10."
+  },
+  {
+    "query": "Generate a poem about nature that has four stanzas."
+  },
+  {
+    "query": "Retell the story of Robin Hood in one sentence."
+  },
+  {
+    "query": "Design a program that calculates the distance between two points given the coordinates of the points."
+  },
+  {
+    "query": "Create an analogy that shows how the legal system works"
+  },
+  {
+    "query": "Create a list of 5 compatible smartphones that a customer might be interested in based on their provided preferences."
+  },
+  {
+    "query": "Provide an example of a technology-driven tool used to aid people with disabilities."
+  },
+  {
+    "query": "Generate a metaphor to contrast technology and nature."
+  },
+  {
+    "query": "Provide one example of an effective communication tactic."
+  },
+  {
+    "query": "Generate an interesting question related to the following article"
+  },
+  {
+    "query": "Generate a email template thanking a customer for their purchase."
+  },
+  {
+    "query": "Summarize the given Wikipedia article."
+  },
+  {
+    "query": "Find the z-score of a data point of 6 given that the mean is 5 and standard deviation is 2"
+  },
+  {
+    "query": "Edit the text to be grammatically correct"
+  },
+  {
+    "query": "Redact or censor sensitive information from the given text."
+  },
+  {
+    "query": "Formulate an opinion on the following issue."
+  },
+  {
+    "query": "Make a list of 3 everyday uses of artificial intelligence."
+  },
+  {
+    "query": "Describe how international trade affects capitalism."
+  },
+  {
+    "query": "Create a list of five ingredients for a broccoli soup."
+  },
+  {
+    "query": "Name five educational websites."
+  },
+  {
+    "query": "Compare and contrast two different search engine algorithms."
+  },
+  {
+    "query": "Explain a development skill you have recently acquired."
+  },
+  {
+    "query": "Write an 75-words essay on entrepreneurship."
+  },
+  {
+    "query": "Identify the dominant position in a given chess game board."
+  },
+  {
+    "query": "What is the Dewey Decimal Classification System?"
+  },
+  {
+    "query": "Name three advantages of using the given product."
+  },
+  {
+    "query": "List three software development methods."
+  },
+  {
+    "query": "Name one type of AI that is used in machine translation."
+  },
+  {
+    "query": "Choose the correct words to complete the phrase."
+  },
+  {
+    "query": "List the three steps to achieve a goal."
+  },
+  {
+    "query": "Name 3 healthy food choices"
+  },
+  {
+    "query": "Retrieve information about the Democratic party."
+  },
+  {
+    "query": "Create a historical analogy for the current COVID-19 pandemic."
+  },
+  {
+    "query": "Suggest a song to match the following mood"
+  },
+  {
+    "query": "Explain the difference between natural and synthetic fibers."
+  },
+  {
+    "query": "Describe the scene of given street."
+  },
+  {
+    "query": "Grade the student's response to the essay prompt."
+  },
+  {
+    "query": "Describe an experience in which you had to work with someone you did not like"
+  },
+  {
+    "query": "Summarize the concept of sustainability."
+  },
+  {
+    "query": "Describe the effects of an El Niño"
+  },
+  {
+    "query": "Find the median among the following set of numbers: 7,5,3,4"
+  },
+  {
+    "query": "Generate alternative names for a new business."
+  },
+  {
+    "query": "Classify the type of point (maximum, minimum, or none) at the critical point of the differential equation y=3x^3 + 10x^2 + 5."
+  },
+  {
+    "query": "Write a query to search the database for products that are discounted."
+  },
+  {
+    "query": "Rewrite the following sentence using a synonym for the word \"impact\": The impact of the pandemic has been devastating."
+  },
+  {
+    "query": "Edit this sentence so it remains gramatically correct."
+  },
+  {
+    "query": "Reduce the following polynomial to the lowest terms."
+  },
+  {
+    "query": "Write a historical report on the Battle of Waterloo."
+  },
+  {
+    "query": "What type of figurative language is used in the following sentence?\n\nHe was as hungry as a bear."
+  },
+  {
+    "query": "Given a sentence, identify the adjectives in it."
+  },
+  {
+    "query": "Name the European country with the largest population."
+  },
+  {
+    "query": "Calculate the temperature of a given location at sunset."
+  },
+  {
+    "query": "Redact the given text to remove all names and addresses"
+  },
+  {
+    "query": "Create a recipe for a nutritious breakfast smoothie."
+  },
+  {
+    "query": "Explain why some people prefer to use Linux rather than Windows."
+  },
+  {
+    "query": "Come up with an idea for creating a mobile application that could help people with mental health."
+  },
+  {
+    "query": "Write a short story with an unexpected twist."
+  },
+  {
+    "query": "Post a tweet to celebrate a milestone"
+  },
+  {
+    "query": "Devise a strategic plan for a fashion brand to increase its online presence."
+  },
+  {
+    "query": "Translate this sentence into English: \"La vida es corta.\""
+  },
+  {
+    "query": "List four signs of a healthy relationship."
+  },
+  {
+    "query": "Name three qualities an effective leader should have."
+  },
+  {
+    "query": "Construct a list of five synonyms for the given word."
+  },
+  {
+    "query": "Explain how self-driving cars work."
+  },
+  {
+    "query": "Write a fable using animals."
+  },
+  {
+    "query": "Name two famous examples of artificial intelligence."
+  },
+  {
+    "query": "Compose a call to action to motivate people to help the environment."
+  },
+  {
+    "query": "Share the scientific definition of the term “gravity”."
+  },
+  {
+    "query": "What is the correct spelling of this word ?"
+  },
+  {
+    "query": "Explain in simple terms the concept of artificial intelligence."
+  },
+  {
+    "query": "Summarize the following paragraph in three to four sentences."
+  },
+  {
+    "query": "Make a list of 5 assumptions of the normal distribution"
+  },
+  {
+    "query": "Generate a list of 5 technologies used in AI."
+  },
+  {
+    "query": "Generate a title for a story about a person who interviews for a job."
+  },
+  {
+    "query": "Provide an example of a complex system that consists of several interacting components."
+  },
+  {
+    "query": "Correct the false fact in the following statement"
+  },
+  {
+    "query": "List 3 strategies for dealing with procrastination."
+  },
+  {
+    "query": "Generate an HTML code that creates a checkbox form with the text \"Subscribe to newsletter\""
+  },
+  {
+    "query": "Who is the narrator in the story?"
+  },
+  {
+    "query": "Describe an event where a person shows integrity."
+  },
+  {
+    "query": "Given a sentence, edit the sentence to make it more expressive and engaging."
+  },
+  {
+    "query": "Find the present value of the cost of $1,000 two years from now, given a discount rate of 7%."
+  },
+  {
+    "query": "Generate two questions about the given concept."
+  },
+  {
+    "query": "Give two reasons why the healthcare system in the US is inefficient."
+  },
+  {
+    "query": "Describe the culture of the US in three paragraphs."
+  },
+  {
+    "query": "Describe a situation where the given algorithm would be effective in decision-making."
+  },
+  {
+    "query": "Create a website for a new type of travel service."
+  },
+  {
+    "query": "Create a poster that conveys the message: \"Love your Mother Nature\"."
+  },
+  {
+    "query": "Think of a creative way to persuade people to recycle."
+  },
+  {
+    "query": "Create a set of instructions to teach a robot how to assemble a lego structure."
+  },
+  {
+    "query": "Summarize the text describing the life cycle of a butterfly."
+  },
+  {
+    "query": "Describe a common behavior that is indicative of trust."
+  },
+  {
+    "query": "Create a book cover for a fiction novel."
+  },
+  {
+    "query": "Explain why plants are important for the environment."
+  },
+  {
+    "query": "Identify three aspects of the given work of art."
+  },
+  {
+    "query": "Create a policy document on a topic related to internet security"
+  },
+  {
+    "query": "Give an example of an allusion in a sentence."
+  },
+  {
+    "query": "Infer the symbolism from this excerpt."
+  },
+  {
+    "query": "Suggest a good restaurant."
+  },
+  {
+    "query": "Analyze this given article."
+  },
+  {
+    "query": "Decide the most suitable clothing for a person going to the beach."
+  },
+  {
+    "query": "Trace the origins of the English language"
+  },
+  {
+    "query": "Explain why the color blue has been historically associated with sadness."
+  },
+  {
+    "query": "Create a mathematical equation to calculate the change in temperature."
+  },
+  {
+    "query": "Find the needed supplies to build a treehouse."
+  },
+  {
+    "query": "Classify the following statement: \"The best way to learn is by teaching\"."
+  },
+  {
+    "query": "Find the meanings of the acronym SEP."
+  },
+  {
+    "query": "Explain how artificial intelligence can be used to shape the future of marketing"
+  },
+  {
+    "query": "Rank these three activities: swimming, running, and biking"
+  },
+  {
+    "query": "Draft a tweet in support of the Black Lives Matter movement."
+  },
+  {
+    "query": "Create a list of five things that a student should avoid in order to succeed in academia."
+  },
+  {
+    "query": "Given some sentences, combine them into a single sentence using appropriate language."
+  },
+  {
+    "query": "Devise a plan for a victory parade for a sports team."
+  },
+  {
+    "query": "Construct a paragraph that motivates someone to start exercising."
+  },
+  {
+    "query": "What are the benefits of taking risks at work?"
+  },
+  {
+    "query": "Given a sentence, remove its references to time."
+  },
+  {
+    "query": "Imagine you are writing a research paper on why students should study history. Write a thesis statement."
+  },
+  {
+    "query": "Develop a plan to reduce electricity usage in a home."
+  },
+  {
+    "query": "Summarize the text in the input field in 1-2 sentences."
+  },
+  {
+    "query": "Rewrite the phrase to use parallel structure"
+  },
+  {
+    "query": "How would you grade this writing?"
+  },
+  {
+    "query": "Imagine you are speaking to an audience about social scientists, what would you be saying?"
+  },
+  {
+    "query": "Compose a tweet, containing no more than 280 characters, that encourages people to donate to a charitable cause."
+  },
+  {
+    "query": "You are given two sentences, you need to find the similar words between them"
+  },
+  {
+    "query": "Categorize the following object into one of the following animal classes: bird, fish, reptile, amphibian, mammal"
+  },
+  {
+    "query": "Name two Supreme Court justices appointed by President Obama."
+  },
+  {
+    "query": "Given a piece of text, convert it into a questionnaire."
+  },
+  {
+    "query": "Explain what a Monte Carlo simulation is."
+  },
+  {
+    "query": "Describe the sound of the given object."
+  },
+  {
+    "query": "Which country was first to get a COVID-19 vaccine?"
+  },
+  {
+    "query": "Generate a list of mechanical engineering topics"
+  },
+  {
+    "query": "Classify the following phrases into two categories depending on if they describe a quality of a leader"
+  },
+  {
+    "query": "Give an example of a word which has four different meanings."
+  },
+  {
+    "query": "Name two environmental benefits of bamboo."
+  },
+  {
+    "query": "Find the volume of a cone with height 10 cm and radius 5 cm."
+  },
+  {
+    "query": "How would you describe a sustainable lifestyle?"
+  }
+]

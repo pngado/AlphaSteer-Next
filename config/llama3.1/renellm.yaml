@@ -1,0 +1,10 @@
+device: cuda:0
+model_name: llama3.1
+steering_matrix_path: data/steering_matrix/steering_matrix_llama3.1.pt
+input_file: data/instructions/test/llama3.1/renellm_llama3.1.json
+output_file: data/responses/llama3.1/renellm_llama3.1_results.json
+batch_size: 32
+max_new_tokens: 128
+file_rename: False
+prompt_column: query
+strength: -0.1,-0.2,-0.3,-0.4,-0.45,-0.5
