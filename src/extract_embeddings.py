@@ -28,6 +28,9 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
+    if os.path.exists(args.output_file):
+        logger.info(f"Embeddings already exist in {args.output_file}, skipping extraction")
+        exit()
     extractor = EmbeddingExtractor(args.model_name, device=args.device)
     
     # Check if input file is JSON
@@ -55,5 +58,6 @@ if __name__ == "__main__":
     )
     
     # Save embeddings to output file
+    os.makedirs(os.path.dirname(args.output_file), exist_ok=True)
     torch.save(embeddings, args.output_file)
     logger.info(f"Embeddings saved to {args.output_file}")

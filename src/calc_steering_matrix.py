@@ -1,7 +1,7 @@
 import torch
 torch.manual_seed(42)
-from .utils.const import ALphaSteer_CALCULATION_CONFIG
-from .utils.steering_utils import *
+from utils.const import ALphaSteer_CALCULATION_CONFIG
+from utils.steering_utils import *
 
 import pickle
 import torch
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
     
     # Load harmful embeddings
-    H_harmful_train_1000 = torch.load(f"{embeds_dir}/embeds_harmful_train.pt", map_location=device)
+    H_harmful_train_1000 = torch.load(f"{embeds_dir}/embeds_harmful_train_1000.pt", map_location=device)
     H_jailbreak_train_full = torch.load(f"{embeds_dir}/embeds_jailbreak_train.pt", map_location=device)
     
     # Sample a subset of jailbreak examples

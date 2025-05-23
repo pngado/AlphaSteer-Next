@@ -1,7 +1,11 @@
 from transformers import LlamaConfig, Qwen2Config, Gemma2Config
 from transformers import LlamaForCausalLM, Qwen2ForCausalLM, Gemma2ForCausalLM
-from ..AlphaSteerModel import *
-from ..NaiveSteerModel import *
+from AlphaSteerModel import *
+from NaiveSteerModel import *
+
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 
 __all__ = [
