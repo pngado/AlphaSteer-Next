@@ -24,10 +24,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Let's take `Llama3.1-8B-Instruct` for instance. You can run
+The alphasteer.sh script automates the process of extracting embeddings, calculating the steering matrix, and generating steered responses for the meta-llama/Llama-3.1-8B-Instruct model. 
 ```
 ./scripts/alphasteer.sh
 ```
-
-
-
