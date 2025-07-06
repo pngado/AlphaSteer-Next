@@ -82,3 +82,15 @@ Please contact any of the first authors for queries.
 
 - Leheng Sheng, leheng.sheng@u.nus.edu
 - Changshuo Shen, stephen_shen@mail.ustc.edu.cn
+
+## 🌟 Citation
+
+If you find our work useful, please kindly consider citing our work as follows:
+```bibtex
+@article{AlphaSteer,
+  title={AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint},
+  author={Sheng, Leheng and Shen, Changshuo and Zhao, Weixiang and Fang, Junfeng and Liu, Xiaohao and Liang, Zhenkai and Wang, Xiang and Zhang, An and Chua, Tat-Seng},
+  journal={arXiv preprint arXiv:2506.07022},
+  year={2025}
+}
+```
