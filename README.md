@@ -83,6 +83,10 @@ Please contact any of the first authors for queries.
 - Leheng Sheng, leheng.sheng@u.nus.edu
 - Changshuo Shen, stephen_shen@mail.ustc.edu.cn
 
+## 🙏 Acknowledgments
+
+We would like to express our gratitude to the authors of [AdaSteer](https://arxiv.org/abs/2504.09466) for their pioneering work on adaptive activation steering. Our refusal vector extraction process is inspired by their methodology presented in "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender". We also acknowledge their open-source implementation available at [https://github.com/MuyuenLP/AdaSteer](https://github.com/MuyuenLP/AdaSteer), which has been instrumental in our research.
+
 ## 🌟 Citation
 
 If you find our work useful, please kindly consider citing our work as follows:
