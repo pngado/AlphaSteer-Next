@@ -1,6 +1,6 @@
 import torch
 torch.manual_seed(42)
-from utils.const import ALphaSteer_CALCULATION_CONFIG
+from utils.const import AlphaSteer_CALCULATION_CONFIG
 from utils.steering_utils import *
 
 import pickle
@@ -33,12 +33,12 @@ if __name__ == "__main__":
     logger.info(f"model_name: {args.model_name}")
     embeds_dir = args.embedding_dir
     # Get layer-specific configuration (layer number and nullspace ratio)
-    layers_ratio_list = ALphaSteer_CALCULATION_CONFIG[args.model_name]
+    layers_ratio_list = AlphaSteer_CALCULATION_CONFIG[args.model_name]
     
     # Load benign embeddings
-    H_benign_train_10000 = torch.load(f"{embeds_dir}/embeds_benign_train.pt", map_location=device)
-    H_coconot_pref = torch.load(f"{embeds_dir}/embeds_coconot_pref.pt", map_location=device)
-    H_coconot_original = torch.load(f"{embeds_dir}/embeds_coconot_original.pt", map_location=device)
+    H_benign_train_10000 = torch.load(f"{embeds_dir}/embeds_benign_train.pt", map_location=device).float()
+    H_coconot_pref = torch.load(f"{embeds_dir}/embeds_coconot_pref.pt", map_location=device).float()
+    H_coconot_original = torch.load(f"{embeds_dir}/embeds_coconot_original.pt", map_location=device).float()
     
     # Sample a subset of borderline examples to balance the dataset
     indices_borderline = torch.randperm(H_coconot_original.size(0))[:4000 - H_coconot_pref.size(0)]
@@ -50,8 +50,8 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
     
     # Load harmful embeddings
-    H_harmful_train_1000 = torch.load(f"{embeds_dir}/embeds_harmful_train_1000.pt", map_location=device)
-    H_jailbreak_train_full = torch.load(f"{embeds_dir}/embeds_jailbreak_train.pt", map_location=device)
+    H_harmful_train_1000 = torch.load(f"{embeds_dir}/embeds_harmful_train_1000.pt", map_location=device).float()
+    H_jailbreak_train_full = torch.load(f"{embeds_dir}/embeds_jailbreak_train.pt", map_location=device).float()
     
     # Sample a subset of jailbreak examples
     indices = torch.randperm(H_jailbreak_train_full.size(0))[:1000]
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     logger.info(f"H_harmful_train.shape: {H_harmful_train.shape}")
     
     # Load refusal vectors (directions that lead to refusal responses)
-    refusal_vectors_path = f"data/refusal_vectors/{args.model_name}/refusal.pkl"
+    refusal_vectors_path = f"data/refusal_vectors/RV/{args.model_name}_RV_refusal.pkl"
     refusal_vectors = pickle.load(open(refusal_vectors_path, "rb"))
     refusal_vectors = torch.tensor(
         refusal_vectors, dtype=torch.float32).to(device)
