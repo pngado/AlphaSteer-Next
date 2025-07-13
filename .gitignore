@@ -2,3 +2,5 @@ __pycache__/
 
 embeddings/
 steering_matrix/
+
+requirements(drop).txt
