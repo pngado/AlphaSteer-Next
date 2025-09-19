@@ -1,0 +1,10 @@
+device: cuda:0
+model_name: llama3.1
+subspace_data_path: data/subspace_steering/subspace_data_llama3.1.pkl
+input_file: data/instructions/test/math_500_sampled.json
+output_file: data/responses/llama3.1/math_llama3.1_results.json
+batch_size: 8
+max_new_tokens: 4096
+file_rename: False
+prompt_column: problem
+strength: -0.1,-0.2,-0.3,-0.4,-0.45,-0.5
