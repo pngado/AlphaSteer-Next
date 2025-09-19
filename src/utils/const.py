@@ -2,6 +2,7 @@ from transformers import LlamaConfig, Qwen2Config, Gemma2Config
 from transformers import LlamaForCausalLM, Qwen2ForCausalLM, Gemma2ForCausalLM
 from AlphaSteerModel import *
 from NaiveSteerModel import *
+from SubspaceSteerModel import *
 
 import sys
 import os
@@ -9,7 +10,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 
 __all__ = [
-    "MODELS_DICT", "AlphaSteer_MODELS_DICT", "Steer_MODELS_DICT",
+    "MODELS_DICT", "AlphaSteer_MODELS_DICT", "Steer_MODELS_DICT", "SubspaceSteer_MODELS_DICT",
     "AlphaSteer_STEERING_LAYERS", "AlphaSteer_CALCULATION_CONFIG",
 ]
 
@@ -29,6 +30,12 @@ Steer_MODELS_DICT = {
     "llama3.1": (SteerLlamaForCausalLM, LlamaConfig, "meta-llama/Llama-3.1-8B-Instruct"),
     "qwen2.5": (SteerQwen2ForCausalLM, Qwen2Config, "Qwen/Qwen2.5-7B-Instruct"),
     "gemma2": (SteerGemma2ForCausalLM, Gemma2Config, "google/gemma-2-9b-it"),
+}
+
+SubspaceSteer_MODELS_DICT = {
+    "llama3.1": (SubspaceAlphaLlamaForCausalLM, LlamaConfig, "meta-llama/Llama-3.1-8B-Instruct"),
+    "qwen2.5": (SubspaceAlphaLlamaForCausalLM, Qwen2Config, "Qwen/Qwen2.5-7B-Instruct"),  # Future extension
+    "gemma2": (SubspaceAlphaLlamaForCausalLM, Gemma2Config, "google/gemma-2-9b-it"),      # Future extension
 }
 
 AlphaSteer_STEERING_LAYERS = {

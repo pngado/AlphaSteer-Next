@@ -89,16 +89,19 @@ def learn_subspaces_per_layer(H_benign, target_layers, args, device):
         logger.info(f"Refining subspaces for layer {layer}...")
         U_list, V_list = learner.refine_subspaces(X_layer, alpha=args.alpha)
 
-        # Store learned parameters
+        # Store learned parameters (only for valid clusters)
         learned_subspaces[layer] = {
-            'W': [W.detach().cpu() for W in learner.W],  # initial subspace bases
-            'm': [m.detach().cpu() for m in learner.m],  # subspace means/origins
+            'W': [learner.W[i].detach().cpu() for i in learner.valid_cluster_indices],  # valid subspace bases
+            'm': [learner.m[i].detach().cpu() for i in learner.valid_cluster_indices],  # valid subspace means/origins
             'U': [U.detach().cpu() for U in U_list],     # principal subspaces (90% variance)
             'V': [V.detach().cpu() for V in V_list],     # residual subspaces (for steering)
-            'alpha': args.alpha                          # variance preservation parameter
+            'alpha': args.alpha,                         # variance preservation parameter
+            'valid_cluster_indices': learner.valid_cluster_indices,  # which original clusters had data
+            'K_original': learner.K,                     # original number of subspaces
+            'K_effective': learner.K_effective           # effective number of subspaces
         }
 
-        logger.info(f"Layer {layer}: Learned {args.K} subspaces")
+        logger.info(f"Layer {layer}: Learned {learner.K_effective}/{args.K} effective subspaces")
         logger.info(f"Principal dims: {[U.shape[1] if U.shape[1] < d_model else 'full' for U in U_list]}")
         logger.info(f"Residual dims: {[V.shape[1] if V.shape[1] > 0 else 'none' for V in V_list]}")
 

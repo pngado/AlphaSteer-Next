@@ -1,0 +1,492 @@
+Starting SubspaceSteer script...
+==========================================
+    SUBSPACE ALPHASTEER FULL PIPELINE
+==========================================
+Configuration:
+  Model: llama3.1 (meta-llama/Llama-3.1-8B-Instruct)
+  Device: cuda:0
+  Subspace params: K=8, p_ratio=0.25, alpha=0.1
+  Training: epochs=100, lr=1e-3, gamma=1e-3
+
+==========================================
+STEP 1: EXTRACTING EMBEDDINGS
+==========================================
+Extracting embeddings for data/instructions/train_val/benign_train.json
+2025-09-17 14:08:49 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_benign_train.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/benign_val.json
+2025-09-17 14:08:59 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_benign_val.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/borderline_val.json
+2025-09-17 14:09:06 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_borderline_val.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/coconot_original.json
+2025-09-17 14:09:12 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_coconot_original.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/coconot_pref.json
+2025-09-17 14:09:19 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_coconot_pref.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/harmful_train_1000.json
+2025-09-17 14:09:25 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_harmful_train_1000.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/harmful_val.json
+2025-09-17 14:09:31 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_harmful_val.pt, skipping extraction
+Extracting embeddings for data/instructions/train_val/jailbreak_train.json
+2025-09-17 14:09:38 - __main__ - INFO - Embeddings already exist in data/embeddings/llama3.1/embeds_jailbreak_train.pt, skipping extraction
+Embedding extraction completed!
+
+==========================================
+STEP 2: LEARNING SUBSPACES
+==========================================
+2025-09-17 14:09:45 - __main__ - INFO - Using device: cuda:0
+2025-09-17 14:09:45 - __main__ - INFO - Target layers: [8, 9, 10, 11, 12, 13, 14, 16, 18, 19]
+2025-09-17 14:09:45 - __main__ - INFO - Loading benign embeddings...
+2025-09-17 14:09:51 - __main__ - INFO - H_benign_train shape: torch.Size([14000, 32, 4096])
+2025-09-17 14:09:51 - __main__ - INFO - Learning subspaces with K=8, p=1024, d=4096
+2025-09-17 14:09:51 - __main__ - INFO - Alpha=0.1 (keeping 90.0% variance as principal)
+2025-09-17 14:09:51 - __main__ - INFO - Learning subspaces for layer 8
+2025-09-17 14:09:53 - __main__ - INFO - Training subspaces for layer 8...
+2025-09-17 14:17:36 - __main__ - INFO - Refining subspaces for layer 8...
+2025-09-17 14:17:38 - __main__ - INFO - Layer 8: Learned 7/8 effective subspaces
+2025-09-17 14:17:38 - __main__ - INFO - Principal dims: [4095, 7, 4, 1, 7, 3, 4]
+2025-09-17 14:17:38 - __main__ - INFO - Residual dims: [1, 4089, 4092, 4095, 4089, 4093, 4092]
+2025-09-17 14:17:38 - __main__ - INFO - Learning subspaces for layer 9
+2025-09-17 14:17:38 - __main__ - INFO - Training subspaces for layer 9...
+2025-09-17 14:25:27 - __main__ - INFO - Refining subspaces for layer 9...
+2025-09-17 14:25:28 - __main__ - INFO - Layer 9: Learned 8/8 effective subspaces
+2025-09-17 14:25:28 - __main__ - INFO - Principal dims: [7, 1, 5, 7, 5, 4, 7, 8]
+2025-09-17 14:25:28 - __main__ - INFO - Residual dims: [4089, 4095, 4091, 4089, 4091, 4092, 4089, 4088]
+2025-09-17 14:25:28 - __main__ - INFO - Learning subspaces for layer 10
+2025-09-17 14:25:28 - __main__ - INFO - Training subspaces for layer 10...
+2025-09-17 14:33:18 - __main__ - INFO - Refining subspaces for layer 10...
+2025-09-17 14:33:19 - __main__ - INFO - Layer 10: Learned 8/8 effective subspaces
+2025-09-17 14:33:19 - __main__ - INFO - Principal dims: [12, 12, 7, 11, 3, 5, 14, 10]
+2025-09-17 14:33:19 - __main__ - INFO - Residual dims: [4084, 4084, 4089, 4085, 4093, 4091, 4082, 4086]
+2025-09-17 14:33:19 - __main__ - INFO - Learning subspaces for layer 11
+2025-09-17 14:33:19 - __main__ - INFO - Training subspaces for layer 11...
+2025-09-17 14:41:10 - __main__ - INFO - Refining subspaces for layer 11...
+2025-09-17 14:41:11 - __main__ - INFO - Layer 11: Learned 8/8 effective subspaces
+2025-09-17 14:41:11 - __main__ - INFO - Principal dims: [12, 20, 2, 14, 15, 13, 15, 9]
+2025-09-17 14:41:11 - __main__ - INFO - Residual dims: [4084, 4076, 4094, 4082, 4081, 4083, 4081, 4087]
+2025-09-17 14:41:11 - __main__ - INFO - Learning subspaces for layer 12
+2025-09-17 14:41:11 - __main__ - INFO - Training subspaces for layer 12...
+2025-09-17 14:49:02 - __main__ - INFO - Refining subspaces for layer 12...
+2025-09-17 14:49:03 - __main__ - INFO - Layer 12: Learned 8/8 effective subspaces
+2025-09-17 14:49:03 - __main__ - INFO - Principal dims: [17, 4, 6, 13, 19, 11, 18, 6]
+2025-09-17 14:49:03 - __main__ - INFO - Residual dims: [4079, 4092, 4090, 4083, 4077, 4085, 4078, 4090]
+2025-09-17 14:49:03 - __main__ - INFO - Learning subspaces for layer 13
+2025-09-17 14:49:03 - __main__ - INFO - Training subspaces for layer 13...
+2025-09-17 14:56:54 - __main__ - INFO - Refining subspaces for layer 13...
+2025-09-17 14:56:55 - __main__ - INFO - Layer 13: Learned 8/8 effective subspaces
+2025-09-17 14:56:55 - __main__ - INFO - Principal dims: [8, 12, 15, 6, 12, 3, 15, 4]
+2025-09-17 14:56:55 - __main__ - INFO - Residual dims: [4088, 4084, 4081, 4090, 4084, 4093, 4081, 4092]
+2025-09-17 14:56:55 - __main__ - INFO - Learning subspaces for layer 14
+2025-09-17 14:56:55 - __main__ - INFO - Training subspaces for layer 14...
+2025-09-17 15:04:47 - __main__ - INFO - Refining subspaces for layer 14...
+2025-09-17 15:04:48 - __main__ - INFO - Layer 14: Learned 8/8 effective subspaces
+2025-09-17 15:04:48 - __main__ - INFO - Principal dims: [17, 25, 27, 20, 19, 10, 33, 20]
+2025-09-17 15:04:48 - __main__ - INFO - Residual dims: [4079, 4071, 4069, 4076, 4077, 4086, 4063, 4076]
+2025-09-17 15:04:48 - __main__ - INFO - Learning subspaces for layer 16
+2025-09-17 15:04:48 - __main__ - INFO - Training subspaces for layer 16...
+2025-09-17 15:12:40 - __main__ - INFO - Refining subspaces for layer 16...
+2025-09-17 15:12:41 - __main__ - INFO - Layer 16: Learned 8/8 effective subspaces
+2025-09-17 15:12:41 - __main__ - INFO - Principal dims: [33, 44, 36, 12, 58, 11, 36, 18]
+2025-09-17 15:12:41 - __main__ - INFO - Residual dims: [4063, 4052, 4060, 4084, 4038, 4085, 4060, 4078]
+2025-09-17 15:12:41 - __main__ - INFO - Learning subspaces for layer 18
+2025-09-17 15:12:41 - __main__ - INFO - Training subspaces for layer 18...
+2025-09-17 15:20:35 - __main__ - INFO - Refining subspaces for layer 18...
+2025-09-17 15:20:36 - __main__ - INFO - Layer 18: Learned 8/8 effective subspaces
+2025-09-17 15:20:36 - __main__ - INFO - Principal dims: [64, 40, 69, 17, 21, 43, 22, 38]
+2025-09-17 15:20:36 - __main__ - INFO - Residual dims: [4032, 4056, 4027, 4079, 4075, 4053, 4074, 4058]
+2025-09-17 15:20:36 - __main__ - INFO - Learning subspaces for layer 19
+2025-09-17 15:20:36 - __main__ - INFO - Training subspaces for layer 19...
+2025-09-17 15:28:31 - __main__ - INFO - Refining subspaces for layer 19...
+2025-09-17 15:28:32 - __main__ - INFO - Layer 19: Learned 8/8 effective subspaces
+2025-09-17 15:28:32 - __main__ - INFO - Principal dims: [31, 14, 60, 35, 55, 43, 85, 53]
+2025-09-17 15:28:32 - __main__ - INFO - Residual dims: [4065, 4082, 4036, 4061, 4041, 4053, 4011, 4043]
+2025-09-17 15:28:39 - __main__ - INFO - Learned subspaces saved to data/subspaces/learned_subspaces_llama3.1.pkl
+2025-09-17 15:28:39 - __main__ - INFO - === Subspace Learning Summary ===
+2025-09-17 15:28:39 - __main__ - INFO - Model: llama3.1
+2025-09-17 15:28:39 - __main__ - INFO - Layers processed: [8, 9, 10, 11, 12, 13, 14, 16, 18, 19]
+2025-09-17 15:28:39 - __main__ - INFO - Subspaces per layer: 8
+2025-09-17 15:28:39 - __main__ - INFO - Subspace dimension: 1024
+2025-09-17 15:28:39 - __main__ - INFO - Total samples used: 14000
+2025-09-17 15:28:39 - __main__ - INFO - Principal variance preserved: 90.0%
+[Epoch 10] Dual objective: 18.5967, W_c (unregularized): 18.2576
+[Epoch 20] Dual objective: 18.6458, W_c (unregularized): 18.2576
+[Epoch 30] Dual objective: 18.6530, W_c (unregularized): 18.2576
+[Epoch 40] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 50] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 60] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 70] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 80] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 90] Dual objective: 18.6535, W_c (unregularized): 18.2576
+[Epoch 100] Dual objective: 18.6535, W_c (unregularized): 18.2576
+Cluster 0: 392 samples assigned
+Cluster 1: 4303 samples assigned
+Cluster 2: 385 samples assigned
+Cluster 3: 2 samples assigned
+Cluster 4: 8790 samples assigned
+Cluster 5: 10 samples assigned
+Cluster 6: 118 samples assigned
+Cluster 7: 0 samples assigned
+Cluster 7: Empty cluster, skipping PCA
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 7
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6]
+[Epoch 10] Dual objective: 23.5084, W_c (unregularized): 23.2579
+[Epoch 20] Dual objective: 23.5305, W_c (unregularized): 23.2579
+[Epoch 30] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 40] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 50] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 60] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 70] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 80] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 90] Dual objective: 23.5325, W_c (unregularized): 23.2579
+[Epoch 100] Dual objective: 23.5325, W_c (unregularized): 23.2579
+Cluster 0: 3053 samples assigned
+Cluster 1: 1 samples assigned
+Cluster 2: 299 samples assigned
+Cluster 3: 3840 samples assigned
+Cluster 4: 256 samples assigned
+Cluster 5: 19 samples assigned
+Cluster 6: 5248 samples assigned
+Cluster 7: 1284 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 27.4773, W_c (unregularized): 27.1312
+[Epoch 20] Dual objective: 27.5450, W_c (unregularized): 27.1312
+[Epoch 30] Dual objective: 27.5631, W_c (unregularized): 27.1312
+[Epoch 40] Dual objective: 27.5663, W_c (unregularized): 27.1312
+[Epoch 50] Dual objective: 27.5666, W_c (unregularized): 27.1312
+[Epoch 60] Dual objective: 27.5666, W_c (unregularized): 27.1312
+[Epoch 70] Dual objective: 27.5666, W_c (unregularized): 27.1312
+[Epoch 80] Dual objective: 27.5666, W_c (unregularized): 27.1312
+[Epoch 90] Dual objective: 27.5666, W_c (unregularized): 27.1312
+[Epoch 100] Dual objective: 27.5666, W_c (unregularized): 27.1312
+Cluster 0: 9854 samples assigned
+Cluster 1: 597 samples assigned
+Cluster 2: 43 samples assigned
+Cluster 3: 2836 samples assigned
+Cluster 4: 9 samples assigned
+Cluster 5: 14 samples assigned
+Cluster 6: 568 samples assigned
+Cluster 7: 79 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 34.0668, W_c (unregularized): 33.7530
+[Epoch 20] Dual objective: 34.1219, W_c (unregularized): 33.7530
+[Epoch 30] Dual objective: 34.1424, W_c (unregularized): 33.7530
+[Epoch 40] Dual objective: 34.1495, W_c (unregularized): 33.7530
+[Epoch 50] Dual objective: 34.1510, W_c (unregularized): 33.7530
+[Epoch 60] Dual objective: 34.1512, W_c (unregularized): 33.7530
+[Epoch 70] Dual objective: 34.1512, W_c (unregularized): 33.7530
+[Epoch 80] Dual objective: 34.1512, W_c (unregularized): 33.7530
+[Epoch 90] Dual objective: 34.1512, W_c (unregularized): 33.7530
+[Epoch 100] Dual objective: 34.1512, W_c (unregularized): 33.7530
+Cluster 0: 781 samples assigned
+Cluster 1: 1987 samples assigned
+Cluster 2: 13 samples assigned
+Cluster 3: 2191 samples assigned
+Cluster 4: 439 samples assigned
+Cluster 5: 74 samples assigned
+Cluster 6: 8457 samples assigned
+Cluster 7: 58 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 31.9198, W_c (unregularized): 31.6823
+[Epoch 20] Dual objective: 31.9384, W_c (unregularized): 31.6823
+[Epoch 30] Dual objective: 31.9400, W_c (unregularized): 31.6823
+[Epoch 40] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 50] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 60] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 70] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 80] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 90] Dual objective: 31.9401, W_c (unregularized): 31.6823
+[Epoch 100] Dual objective: 31.9401, W_c (unregularized): 31.6823
+Cluster 0: 1366 samples assigned
+Cluster 1: 15 samples assigned
+Cluster 2: 676 samples assigned
+Cluster 3: 2867 samples assigned
+Cluster 4: 3810 samples assigned
+Cluster 5: 1302 samples assigned
+Cluster 6: 3636 samples assigned
+Cluster 7: 328 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 42.8011, W_c (unregularized): 42.4802
+[Epoch 20] Dual objective: 42.8513, W_c (unregularized): 42.4802
+[Epoch 30] Dual objective: 42.8678, W_c (unregularized): 42.4802
+[Epoch 40] Dual objective: 42.8714, W_c (unregularized): 42.4802
+[Epoch 50] Dual objective: 42.8719, W_c (unregularized): 42.4802
+[Epoch 60] Dual objective: 42.8720, W_c (unregularized): 42.4802
+[Epoch 70] Dual objective: 42.8720, W_c (unregularized): 42.4802
+[Epoch 80] Dual objective: 42.8720, W_c (unregularized): 42.4802
+[Epoch 90] Dual objective: 42.8720, W_c (unregularized): 42.4802
+[Epoch 100] Dual objective: 42.8720, W_c (unregularized): 42.4802
+Cluster 0: 553 samples assigned
+Cluster 1: 643 samples assigned
+Cluster 2: 4317 samples assigned
+Cluster 3: 3429 samples assigned
+Cluster 4: 303 samples assigned
+Cluster 5: 224 samples assigned
+Cluster 6: 4495 samples assigned
+Cluster 7: 36 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 43.1790, W_c (unregularized): 42.8647
+[Epoch 20] Dual objective: 43.2332, W_c (unregularized): 42.8647
+[Epoch 30] Dual objective: 43.2539, W_c (unregularized): 42.8647
+[Epoch 40] Dual objective: 43.2606, W_c (unregularized): 42.8647
+[Epoch 50] Dual objective: 43.2623, W_c (unregularized): 42.8647
+[Epoch 60] Dual objective: 43.2625, W_c (unregularized): 42.8647
+[Epoch 70] Dual objective: 43.2626, W_c (unregularized): 42.8647
+[Epoch 80] Dual objective: 43.2626, W_c (unregularized): 42.8647
+[Epoch 90] Dual objective: 43.2626, W_c (unregularized): 42.8647
+[Epoch 100] Dual objective: 43.2626, W_c (unregularized): 42.8647
+Cluster 0: 1756 samples assigned
+Cluster 1: 1025 samples assigned
+Cluster 2: 2353 samples assigned
+Cluster 3: 384 samples assigned
+Cluster 4: 220 samples assigned
+Cluster 5: 53 samples assigned
+Cluster 6: 7932 samples assigned
+Cluster 7: 277 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 62.5381, W_c (unregularized): 62.2473
+[Epoch 20] Dual objective: 62.5929, W_c (unregularized): 62.2473
+[Epoch 30] Dual objective: 62.6190, W_c (unregularized): 62.2473
+[Epoch 40] Dual objective: 62.6285, W_c (unregularized): 62.2473
+[Epoch 50] Dual objective: 62.6310, W_c (unregularized): 62.2473
+[Epoch 60] Dual objective: 62.6315, W_c (unregularized): 62.2473
+[Epoch 70] Dual objective: 62.6315, W_c (unregularized): 62.2473
+[Epoch 80] Dual objective: 62.6315, W_c (unregularized): 62.2473
+[Epoch 90] Dual objective: 62.6315, W_c (unregularized): 62.2473
+[Epoch 100] Dual objective: 62.6315, W_c (unregularized): 62.2473
+Cluster 0: 1073 samples assigned
+Cluster 1: 1182 samples assigned
+Cluster 2: 1586 samples assigned
+Cluster 3: 68 samples assigned
+Cluster 4: 3860 samples assigned
+Cluster 5: 267 samples assigned
+Cluster 6: 4509 samples assigned
+Cluster 7: 1455 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 93.8502, W_c (unregularized): 93.4298
+[Epoch 20] Dual objective: 94.0350, W_c (unregularized): 93.4298
+[Epoch 30] Dual objective: 94.1814, W_c (unregularized): 93.4298
+[Epoch 40] Dual objective: 94.2936, W_c (unregularized): 93.4298
+[Epoch 50] Dual objective: 94.3767, W_c (unregularized): 93.4298
+[Epoch 60] Dual objective: 94.4366, W_c (unregularized): 93.4298
+[Epoch 70] Dual objective: 94.4783, W_c (unregularized): 93.4299
+[Epoch 80] Dual objective: 94.5062, W_c (unregularized): 93.4299
+[Epoch 90] Dual objective: 94.5241, W_c (unregularized): 93.4299
+[Epoch 100] Dual objective: 94.5352, W_c (unregularized): 93.4299
+Cluster 0: 1014 samples assigned
+Cluster 1: 244 samples assigned
+Cluster 2: 10222 samples assigned
+Cluster 3: 81 samples assigned
+Cluster 4: 54 samples assigned
+Cluster 5: 1550 samples assigned
+Cluster 6: 159 samples assigned
+Cluster 7: 676 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+[Epoch 10] Dual objective: 111.5367, W_c (unregularized): 111.2194
+[Epoch 20] Dual objective: 111.6194, W_c (unregularized): 111.2194
+[Epoch 30] Dual objective: 111.6719, W_c (unregularized): 111.2194
+[Epoch 40] Dual objective: 111.7042, W_c (unregularized): 111.2194
+[Epoch 50] Dual objective: 111.7234, W_c (unregularized): 111.2194
+[Epoch 60] Dual objective: 111.7343, W_c (unregularized): 111.2194
+[Epoch 70] Dual objective: 111.7402, W_c (unregularized): 111.2194
+[Epoch 80] Dual objective: 111.7431, W_c (unregularized): 111.2194
+[Epoch 90] Dual objective: 111.7444, W_c (unregularized): 111.2194
+[Epoch 100] Dual objective: 111.7450, W_c (unregularized): 111.2194
+Cluster 0: 528 samples assigned
+Cluster 1: 384 samples assigned
+Cluster 2: 2780 samples assigned
+Cluster 3: 614 samples assigned
+Cluster 4: 1554 samples assigned
+Cluster 5: 566 samples assigned
+Cluster 6: 4264 samples assigned
+Cluster 7: 3310 samples assigned
+Subspace refinement completed:
+  Original K: 8
+  Effective K: 8
+  Valid cluster indices: [0, 1, 2, 3, 4, 5, 6, 7]
+Subspace learning completed!
+
+==========================================
+STEP 3: CALCULATING STEERING MATRICES
+==========================================
+2025-09-17 15:30:23 - __main__ - INFO - Using device: cuda:0
+2025-09-17 15:30:23 - __main__ - INFO - Target layers: [8, 9, 10, 11, 12, 13, 14, 16, 18, 19]
+2025-09-17 15:30:23 - __main__ - INFO - Loading benign embeddings...
+2025-09-17 15:30:31 - __main__ - INFO - H_benign_train shape: torch.Size([14000, 32, 4096])
+2025-09-17 15:30:31 - __main__ - INFO - Loading harmful embeddings...
+2025-09-17 15:30:33 - __main__ - INFO - H_harmful_train shape: torch.Size([2000, 32, 4096])
+2025-09-17 15:30:33 - __main__ - INFO - Loading learned subspaces from data/subspaces/learned_subspaces_llama3.1.pkl
+2025-09-17 15:30:36 - __main__ - INFO - Loaded subspaces for layers: [8, 9, 10, 11, 12, 13, 14, 16, 18, 19]
+2025-09-17 15:30:36 - __main__ - INFO - Assigning data to subspaces for layer 8
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 0: 14000 benign, 2000 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 1: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 2: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 3: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 4: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 5: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Layer 8, Subspace 6: 0 benign, 0 harmful
+2025-09-17 15:31:00 - __main__ - INFO - Assigning data to subspaces for layer 9
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 0: 3384 benign, 1526 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 1: 3 benign, 0 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 2: 364 benign, 0 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 3: 3393 benign, 9 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 4: 583 benign, 0 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 5: 85 benign, 0 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 6: 3996 benign, 463 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Layer 9, Subspace 7: 2192 benign, 2 harmful
+2025-09-17 15:31:29 - __main__ - INFO - Assigning data to subspaces for layer 10
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 0: 8227 benign, 687 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 1: 1207 benign, 176 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 2: 105 benign, 0 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 3: 2576 benign, 788 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 4: 24 benign, 0 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 5: 26 benign, 11 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 6: 1420 benign, 338 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Layer 10, Subspace 7: 415 benign, 0 harmful
+2025-09-17 15:31:59 - __main__ - INFO - Assigning data to subspaces for layer 11
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 0: 1164 benign, 136 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 1: 3940 benign, 1196 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 2: 110 benign, 0 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 3: 2011 benign, 150 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 4: 1004 benign, 158 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 5: 217 benign, 328 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 6: 5384 benign, 32 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Layer 11, Subspace 7: 170 benign, 0 harmful
+2025-09-17 15:32:28 - __main__ - INFO - Assigning data to subspaces for layer 12
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 0: 2163 benign, 353 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 1: 71 benign, 0 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 2: 422 benign, 0 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 3: 1561 benign, 0 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 4: 4658 benign, 1500 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 5: 1216 benign, 4 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 6: 3534 benign, 143 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Layer 12, Subspace 7: 375 benign, 0 harmful
+2025-09-17 15:32:58 - __main__ - INFO - Assigning data to subspaces for layer 13
+2025-09-17 15:33:27 - __main__ - INFO - Layer 13, Subspace 0: 856 benign, 4 harmful
+2025-09-17 15:33:27 - __main__ - INFO - Layer 13, Subspace 1: 1189 benign, 290 harmful
+2025-09-17 15:33:27 - __main__ - INFO - Layer 13, Subspace 2: 4805 benign, 136 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Layer 13, Subspace 3: 1616 benign, 1 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Layer 13, Subspace 4: 855 benign, 30 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Layer 13, Subspace 5: 205 benign, 0 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Layer 13, Subspace 6: 4417 benign, 1539 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Layer 13, Subspace 7: 57 benign, 0 harmful
+2025-09-17 15:33:28 - __main__ - INFO - Assigning data to subspaces for layer 14
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 0: 1489 benign, 13 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 1: 1261 benign, 17 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 2: 2100 benign, 1068 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 3: 501 benign, 8 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 4: 374 benign, 2 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 5: 66 benign, 0 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 6: 7743 benign, 889 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Layer 14, Subspace 7: 466 benign, 3 harmful
+2025-09-17 15:33:57 - __main__ - INFO - Assigning data to subspaces for layer 16
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 0: 1046 benign, 67 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 1: 1545 benign, 91 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 2: 1399 benign, 4 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 3: 70 benign, 17 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 4: 4961 benign, 1807 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 5: 195 benign, 0 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 6: 3449 benign, 12 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Layer 16, Subspace 7: 1335 benign, 2 harmful
+2025-09-17 15:34:26 - __main__ - INFO - Assigning data to subspaces for layer 18
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 0: 1556 benign, 26 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 1: 367 benign, 337 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 2: 9374 benign, 1027 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 3: 93 benign, 0 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 4: 76 benign, 9 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 5: 1656 benign, 561 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 6: 172 benign, 0 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Layer 18, Subspace 7: 706 benign, 40 harmful
+2025-09-17 15:34:55 - __main__ - INFO - Assigning data to subspaces for layer 19
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 0: 555 benign, 0 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 1: 244 benign, 0 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 2: 2740 benign, 150 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 3: 679 benign, 8 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 4: 1442 benign, 288 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 5: 753 benign, 49 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 6: 4807 benign, 436 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Layer 19, Subspace 7: 2780 benign, 1069 harmful
+2025-09-17 15:35:24 - __main__ - INFO - Learning steering matrices...
+2025-09-17 15:35:24 - __main__ - INFO - Learning steering matrices for layer 8
+2025-09-17 15:35:26 - __main__ - INFO - Layer 8: Learned 7 steering matrices
+2025-09-17 15:35:26 - __main__ - INFO - Learning steering matrices for layer 9
+2025-09-17 15:35:32 - __main__ - INFO - Layer 9: Learned 8 steering matrices
+2025-09-17 15:35:32 - __main__ - INFO - Learning steering matrices for layer 10
+2025-09-17 15:35:42 - __main__ - INFO - Layer 10: Learned 8 steering matrices
+2025-09-17 15:35:42 - __main__ - INFO - Learning steering matrices for layer 11
+2025-09-17 15:35:53 - __main__ - INFO - Layer 11: Learned 8 steering matrices
+2025-09-17 15:35:53 - __main__ - INFO - Learning steering matrices for layer 12
+2025-09-17 15:36:00 - __main__ - INFO - Layer 12: Learned 8 steering matrices
+2025-09-17 15:36:00 - __main__ - INFO - Learning steering matrices for layer 13
+2025-09-17 15:36:10 - __main__ - INFO - Layer 13: Learned 8 steering matrices
+2025-09-17 15:36:10 - __main__ - INFO - Learning steering matrices for layer 14
+2025-09-17 15:36:20 - __main__ - INFO - Layer 14: Learned 8 steering matrices
+2025-09-17 15:36:20 - __main__ - INFO - Learning steering matrices for layer 16
+2025-09-17 15:36:30 - __main__ - INFO - Layer 16: Learned 8 steering matrices
+2025-09-17 15:36:30 - __main__ - INFO - Learning steering matrices for layer 18
+2025-09-17 15:36:44 - __main__ - INFO - Layer 18: Learned 8 steering matrices
+2025-09-17 15:36:44 - __main__ - INFO - Learning steering matrices for layer 19
+2025-09-17 15:36:57 - __main__ - INFO - Layer 19: Learned 8 steering matrices
+2025-09-17 15:37:08 - __main__ - INFO - Steering matrices saved to data/steering_matrices/steering_matrices_llama3.1.pkl
+2025-09-17 15:37:08 - __main__ - INFO - === Steering Matrix Learning Summary ===
+2025-09-17 15:37:08 - __main__ - INFO - Model: llama3.1
+2025-09-17 15:37:08 - __main__ - INFO - Layers processed: [8, 9, 10, 11, 12, 13, 14, 16, 18, 19]
+2025-09-17 15:37:08 - __main__ - INFO - Regularization gamma: 0.001
+2025-09-17 15:37:08 - __main__ - INFO - Layer 8: 7 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 9: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 10: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 11: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 12: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 13: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 14: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 16: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 18: 8 subspace-specific steering matrices learned
+2025-09-17 15:37:08 - __main__ - INFO - Layer 19: 8 subspace-specific steering matrices learned
+Steering matrix calculation completed!
+
+==========================================
+STEP 4: PREPARING FOR GENERATION
+==========================================
+Creating sample generation config: config/subspace_llama3.1/sample_subspace.yaml
+
+==========================================
+    PIPELINE COMPLETED SUCCESSFULLY!
+==========================================
+
+Summary of outputs:
+  1. Embeddings: data/embeddings/llama3.1/
+  2. Learned subspaces: data/subspaces/learned_subspaces_llama3.1.pkl
+  3. Steering matrices: data/steering_matrices/steering_matrices_llama3.1.pkl
+  4. Sample config: config/subspace_llama3.1/sample_subspace.yaml
+
+To generate responses, run:
+  python generate_subspace_response.py --config_path config/subspace_llama3.1/sample_subspace.yaml
+
+Or use the generation script:
+  bash scripts/generate_subspace.sh
+
+Pipeline completed in Wed Sep 17 03:37:09 PM AEST 2025
+Script finished.
