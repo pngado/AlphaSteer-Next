@@ -66,9 +66,14 @@ class OTSubspaceLearner:
 
         # Optimizer for g
         self.opt_g = optim.Adam([self.g], lr=lr)
+        # Optimizers for each (W_k, m_k) pair
+        self.opt_Wm = [optim.Adam([self.m[k]], lr=lr) for k in range(K)]
         self.lr = lr
 
         self.U, self.V = None, None
+
+        self._prev_m = [mi.detach().cpu().clone() for mi in self.m]
+        self.history_m_changes = [[] for _ in range(self.K)]
 
     def loss_dual(self, X):
         """
@@ -107,7 +112,7 @@ class OTSubspaceLearner:
         For each point, assign it to the best subspace and sum the costs.
         This should decrease during training.
         """
-        N = X.shape[0]
+        N = X.shape[0] # number of data samples
         
         # Compute costs for each point to each subspace
         costs = []
@@ -122,7 +127,7 @@ class OTSubspaceLearner:
         # Return average cost
         return min_costs.mean()
 
-    def step(self, X, g_steps=20):
+    def step(self, X, g_steps=50):
         # === A) Update dual variables g (maximize) ===
         for _ in range(g_steps):
             self.opt_g.zero_grad()
@@ -132,39 +137,60 @@ class OTSubspaceLearner:
             self.opt_g.step()
 
         # === B) Update subspaces W and means m (minimize) ===
+        # Update each (W_k, m_k) pair together
         new_Ws = []
-        new_ms = []
         for k in range(self.K):
+            # Create temporary W_k that requires gradients
             Wk = self.W[k].clone().detach().requires_grad_(True)
-            mk = self.m[k].clone().detach().requires_grad_(True)
-            optimizer = optim.SGD([Wk, mk], lr=self.lr)
 
-            optimizer.zero_grad()
-            obj = self.loss_dual(X)  # use global OT loss
+            # Zero gradients for this pair
+            self.opt_Wm[k].zero_grad()
+
+            # Create temporary optimizer for W_k (can't use persistent due to Stiefel constraint)
+            temp_opt_W = optim.SGD([Wk], lr=self.lr)
+            temp_opt_W.zero_grad()
+
+            # Compute loss
+            obj = self.loss_dual(X)
             obj.backward()
 
-            optimizer.step()
+            # Update m_k using persistent optimizer
+            self.opt_Wm[k].step()
+
+            # Update W_k using temporary optimizer
+            temp_opt_W.step()
 
             # Retract W to Stiefel manifold via QR
             with torch.no_grad():
                 Q, _ = torch.linalg.qr(Wk)
             new_Ws.append(Q)
-            # m doesn't need retraction, it's unconstrained
-            new_ms.append(mk.detach().requires_grad_(True))
 
         self.W = new_Ws
-        self.m = new_ms
 
     def fit(self, X, epochs=50):
         for epoch in range(epochs):
             self.step(X)
-            if (epoch + 1) % 10 == 0:
+            if (epoch + 1) % 2 == 0:
                 dual_obj = self.loss_dual(X)
                 unregularized_wc = self.primal_objective(X)  # W_c
 
                 print(f"[Epoch {epoch+1}] "
                     f"Dual objective: {dual_obj.item():.4f}, "
                     f"W_c (unregularized): {unregularized_wc.item():.4f}")
+                
+            # ---- Per-epoch m-change diagnostics ----
+            # Compute L2 change of each m compared to previous epoch snapshot (CPU tensors)
+            for k in range(self.K):
+                cur_m_cpu = self.m[k].detach().cpu()
+                prev_m_cpu = self._prev_m[k]
+                delta = cur_m_cpu - prev_m_cpu
+                delta_norm = float(delta.norm().item())
+                # record history
+                self.history_m_changes[k].append(delta_norm)
+                # print concise summary
+                print(f"[Epoch {epoch+1}] m[{k}] = {delta_norm:.6e}")
+            # update snapshots for next epoch
+            self._prev_m = [mi.detach().cpu().clone() for mi in self.m]
         
         return self
 

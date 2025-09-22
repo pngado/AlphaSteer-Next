@@ -33,15 +33,15 @@ if __name__ == "__main__":
     # Check if files exist
     if not os.path.exists(args.model_outputs):
         logging.error(f"Model outputs file does not exist: {args.model_outputs}")
-        return
+        raise SystemExit(1)
     
     if not os.path.exists(args.reference_outputs):
         logging.error(f"Reference outputs file does not exist: {args.reference_outputs}")
-        return
+        raise SystemExit(1)
     
     if not os.path.exists(args.annotators_config):
         logging.error(f"Annotators config file does not exist: {args.annotators_config}")
-        return
+        raise SystemExit(1)
     
     # Create output directory if it doesn't exist
     os.makedirs(args.output_path, exist_ok=True)

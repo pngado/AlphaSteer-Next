@@ -140,7 +140,8 @@ def process_file(input_file: str, output_file: str = None) -> None:
     
     # Process each result
     for result in results:
-        for key, value in result.items():
+        # Take a snapshot of items to avoid mutating the dict during iteration
+        for key, value in list(result.items()):
             if "response" not in key:
                 continue
             
@@ -188,7 +189,7 @@ if __name__ == "__main__":
     # Check if input file exists
     if not os.path.exists(args.input_file):
         logging.error(f"Input file does not exist: {args.input_file}")
-        return
+        exit(1)
     
     # Process file
     process_file(args.input_file, args.output_file)

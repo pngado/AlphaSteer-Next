@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument("--save_dir", type=str, required=True, help="Directory to save learned subspaces")
 
     # Subspace learning parameters
-    parser.add_argument("--K", type=int, default=16, help="Number of subspaces to learn")
+    parser.add_argument("--K", type=int, default=8, help="Number of subspaces to learn")
     parser.add_argument("--p_ratio", type=float, default=0.25, help="Subspace dimension as ratio of embedding dim")
     parser.add_argument("--epochs", type=int, default=100, help="Training epochs")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")

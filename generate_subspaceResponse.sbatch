@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # Slurm job configuration
-#SBATCH --job-name="subspaceResponse"    
+#SBATCH --job-name="SubspaceSteerResponse"    
 #SBATCH --account=ax74              # project/group account
-#SBATCH --partition=gpu             # The GPU partition (check cluster docs for the right name)
-#SBATCH --gres=gpu:1                   # Request 1 GPU
-#SBATCH --time=10:00:00               # Request 4 hours of runtime (hh:mm:ss)
-#SBATCH --mem=64G                   # Request 64 GB of memory
+#SBATCH --partition=fit             # The GPU partition (check cluster docs for the right name)
+#SBATCH --qos=fitq
+#SBATCH --gres=gpu:A100:1                   # Request 1 GPU
+#SBATCH --time=06:00:00               # Request 4 hours of runtime (hh:mm:ss)
+#SBATCH --mem=256G                   # Request 64 GB of memory
 #SBATCH --cpus-per-task=8      # Add CPU cores for parallel processing
 #SBATCH --output=subspaceSteer_%j.log    # Save output to a log file
 
@@ -22,9 +23,9 @@ module load anaconda/2024.02-1
 source ~/.bashrc
 
 # 4. Activate your Conda environment
-conda activate alphasteer
+conda activate alphasteerv3
 
 # 5. Run the main script
 echo "Starting SubspaceSteer script..."
-bash ./scripts/generate_subspace.sh
+bash ./scripts/run_all_subspace_configs.sh
 echo "Script finished."

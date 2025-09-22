@@ -196,15 +196,15 @@ class SubspaceAlphaLlamaDecoderLayer(AlphaLlamaDecoderLayer):
         # resid_post - final residual connection
         hidden_states = residual + hidden_states
 
-        # outputs = (hidden_states,)
-        # if output_attentions:
-        #     outputs += (self_attn_weights,)
-
-        # return outputs
-
+        outputs = (hidden_states,)
         if output_attentions:
-            return (hidden_states, self_attn_weights)
-        return hidden_states
+            outputs += (self_attn_weights,)
+
+        return outputs
+
+        # if output_attentions:
+        #     return (hidden_states, self_attn_weights)
+        # return hidden_states
 
 
 class SubspaceAlphaLlamaModel(AlphaLlamaModel):
