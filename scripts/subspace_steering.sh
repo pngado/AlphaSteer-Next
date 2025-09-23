@@ -7,9 +7,11 @@ echo "=========================================="
 # Configuration - Change these variables to test different models and settings
 TRAIN_VAL_DIR=data/instructions/train_val
 EMBEDDING_DIR=data/embeddings/llama3.1      # Output directory for embeddings
-SUBSPACE_DIR=data/subspaces/3Ks_P50            # Output directory for learned subspaces
-STEERING_DIR=data/steering_matrices/3Ks_P50        # Output directory for steering matrices
-SUBSPACE_DATA_OUTPUT_PATH=data/combined_subspace/3Ks_P50_subspace_data_llama3.1.pkl 
+SUBSPACE_DIR=data/subspaces/1K           # Output directory for learned subspaces
+STEERING_DIR=data/steering_matrices/1K        # Output directory for steering matrices
+# SUBSPACE_DATA_PATH=data/subspaces/1K/learned_subspaces_llama3.1.pkl
+# STEERING_MATRICES_PATH=data/subspaces/1K/steering_matrices_llama3.1.pkl
+# SUBSPACE_DATA_OUTPUT_PATH=data/combined_subspace/1K_subspace_data_llama3.1.pkl 
 NICKNAME=llama3.1
 MODEL_NAME=llama3.1
 HF_MODEL_NAME=meta-llama/Llama-3.1-8B-Instruct  # HuggingFace model name
@@ -17,12 +19,12 @@ HF_MODEL_NAME=meta-llama/Llama-3.1-8B-Instruct  # HuggingFace model name
 DEVICE=cuda:0
 
 # Subspace learning parameters
-K=3                    # Number of subspaces to learn
-P_RATIO=0.5           # Subspace dimension as ratio of embedding dim
-EPOCHS=100             # Training epochs
+K=1                    # Number of subspaces to learn
+P_RATIO=1.0           # Subspace dimension as ratio of embedding dim
+EPOCHS=120            # Training epochs
 LR=1e-3               # Learning rate
 EPSILON=0.1           # OT regularization parameter
-ALPHA=0.1             # Variance preservation ratio (1-alpha kept as principal)
+ALPHA=0.6             # Variance preservation ratio (1-alpha kept as principal)
 GAMMA=1e-3            # Regularization weight for delta learning
 
 echo "Configuration:"
@@ -116,16 +118,16 @@ echo "Steering matrix calculation completed!"
 
 
 # Step 4: Combine learned subspaces and steering matrices into one pickle file
-echo "=========================================="
-echo "STEP 4: COMBINE SUBSPACE DATA"
-echo "=========================================="
+# echo "=========================================="
+# echo "STEP 4: COMBINE SUBSPACE DATA"
+# echo "=========================================="
 
-python combine_subspace_data.py \
-    --learned_subspaces_path $SUBSPACE_DIR \
-    --steering_matrices_path $STEERING_DIR \
-    --output_path $SUBSPACE_DATA_OUTPUT_PATH \
-    --model_name $MODEL_NAME 
+# python combine_subspace_data.py \
+#     --learned_subspaces_path $SUBSPACE_DATA_PATH \
+#     --steering_matrices_path $STEERING_MATRICES_PATH \
+#     --output_path $SUBSPACE_DATA_OUTPUT_PATH \
+#     --model_name $MODEL_NAME 
 
-echo "Combining subspace data completed!"
-echo "Subspace data saved to $SUBSPACE_DATA_OUTPUT_PATH"
+# echo "Combining subspace data completed!"
+# echo "Subspace data saved to $SUBSPACE_DATA_OUTPUT_PATH"
 

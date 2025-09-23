@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
+import numpy as np
 
 # -----------------------------
 # Utilities
@@ -58,7 +59,13 @@ class OTSubspaceLearner:
         self.device = device
 
         # Initialize subspaces
-        self.W = [random_stiefel(d, p, device) for _ in range(K)]
+        self.W = [random_stiefel(d, p, device).requires_grad_(True) for _ in range(K)]
+        # DEBUG
+        self._prev_W = [Wk.detach().cpu().clone() for Wk in self.W]  # snapshot for relative-change
+        self.history = {
+            'obj': [], 'gradW_mean': [], 'gradg_norm': [], 'relW_mean': [],
+            'ortho_mean': [], 'entropy': [], 'hard_change': []
+        }
         # Initialize learnable means/origins for each subspace
         self.m = [torch.zeros(d, device=device, requires_grad=True) for _ in range(K)]
         # Dual variables g_k
@@ -126,8 +133,40 @@ class OTSubspaceLearner:
         
         # Return average cost
         return min_costs.mean()
+    
+    def primal_objective_regularized(self, X):
+        """
+        Compute the entropic regularized primal cost:
+        sum_{n,k} pi_{nk} * c(x_n, W_k, m_k) + eps * sum_{n,k} pi_{nk} (log pi_{nk} - log(1/K))
+        """
+        N, d = X.shape
 
-    def step(self, X, g_steps=50):
+        # costs (N, K)
+        costs = []
+        for W, m in zip(self.W, self.m):
+            X_centered = X - m
+            proj = X_centered @ W @ W.T
+            residuals = X_centered - proj
+            cost = (residuals ** 2).sum(dim=1)  # (N,)
+            costs.append(cost)
+        costs = torch.stack(costs, dim=1)
+
+        # soft assignments pi (N, K)
+        logits = (-costs + self.g) / self.eps
+        log_probs = logits - torch.logsumexp(logits, dim=1, keepdim=True)
+        pi = torch.exp(log_probs)  # softmax over k
+
+        # expected cost
+        transport_cost = (pi * costs).sum() / N
+
+        # entropy term (relative to uniform 1/K)
+        entropy = -(pi * log_probs).sum() / N
+        reg_primal = transport_cost + self.eps * entropy
+
+        return reg_primal
+
+
+    def step(self, X, g_steps=50, print_every=1):
         # === A) Update dual variables g (maximize) ===
         for _ in range(g_steps):
             self.opt_g.zero_grad()
@@ -136,61 +175,121 @@ class OTSubspaceLearner:
             loss.backward()
             self.opt_g.step()
 
+        # Optionally capture grad norm for g (might require g to be a Parameter or store grads)
+        gradg_norm = None
+        if hasattr(self, 'g') and getattr(self, 'g').grad is not None:
+            gradg_norm = float(self.g.grad.norm().cpu().item())
+
         # === B) Update subspaces W and means m (minimize) ===
-        # Update each (W_k, m_k) pair together
-        new_Ws = []
+        # 1) zero grads
+        for opt in self.opt_Wm:
+            opt.zero_grad()
+
+        # 2) Single forward/backward to compute gradients w.r.t W and m
+        obj = self.loss_dual(X)
+        obj.backward()
+
+        # Diagnostics before parameter updates
+        gradW_norms = []
+        for Wk in self.W:
+            if Wk.grad is None:
+                gradW_norms.append(0.0)
+            else:
+                gradW_norms.append(float(Wk.grad.norm().cpu().item()))
+        gradW_mean = float(np.mean(gradW_norms))
+
+        # 3) update m_k (via persistent optimizers)
+        for opt in self.opt_Wm:
+            opt.step()
+
+        # 4) update W_k manually + retraction
+        with torch.no_grad():
+            for k in range(self.K):
+                # Check if gradient exists
+                if self.W[k].grad is not None:
+                    # gradient step
+                    self.W[k] -= self.lr * self.W[k].grad
+                    # retract to Stiefel manifold
+                    Q, _ = torch.linalg.qr(self.W[k])
+                    self.W[k].copy_(Q)   # in-place overwrite, keeps Parameter object
+                    # clear gradient after manual update to avoid accumulating stale grads
+                    self.W[k].grad.zero_()
+                else:
+                    print(f"Warning: W[{k}] has no gradient")
+
+
+        # ----- Diagnostics after update -----
+        # relative change in W (Frobenius) using CPU snapshots
+        rel_changes = []
         for k in range(self.K):
-            # Create temporary W_k that requires gradients
-            Wk = self.W[k].clone().detach().requires_grad_(True)
+            cur = self.W[k].detach().cpu()
+            prev = self._prev_W[k]
+            denom = (prev.norm().item() + 1e-12)
+            rel = float((cur - prev).norm().item() / denom)
+            rel_changes.append(rel)
+            # update snapshot
+            self._prev_W[k] = cur.clone()
 
-            # Zero gradients for this pair
-            self.opt_Wm[k].zero_grad()
+        relW_mean = float(np.mean(rel_changes))
 
-            # Create temporary optimizer for W_k (can't use persistent due to Stiefel constraint)
-            temp_opt_W = optim.SGD([Wk], lr=self.lr)
-            temp_opt_W.zero_grad()
+        # orthogonality check: ||W^T W - I||_F per W_k
+        ortho_errs = []
+        for Wk in self.W:
+            WT_W = Wk.T @ Wk
+            I = torch.eye(WT_W.shape[0], device=WT_W.device)
+            ortho_errs.append(float(torch.norm(WT_W - I).cpu().item()))
+        ortho_mean = float(np.mean(ortho_errs))
 
-            # Compute loss
-            obj = self.loss_dual(X)
-            obj.backward()
+        # Save diagnostics to history
+        self.history['obj'].append(float(obj.detach().cpu().item()))
+        self.history['gradW_mean'].append(gradW_mean)
+        self.history['gradg_norm'].append(gradg_norm if gradg_norm is not None else float('nan'))
+        self.history['relW_mean'].append(relW_mean)
+        self.history['ortho_mean'].append(ortho_mean)
 
-            # Update m_k using persistent optimizer
-            self.opt_Wm[k].step()
+        diagnostics = {
+            'obj': self.history['obj'][-1],
+            'gradW_mean': gradW_mean,
+            'gradg_norm': gradg_norm,
+            'relW_mean': relW_mean,
+            'ortho_mean': ortho_mean,
+        }
 
-            # Update W_k using temporary optimizer
-            temp_opt_W.step()
+        # print concise diagnostics (if desired)
+        if print_every and (print_every <= 1):
+            print(f"[step] obj={diagnostics['obj']:.6e}, gradW_mean={diagnostics['gradW_mean']:.3e}, "
+                f"relW={diagnostics['relW_mean']:.3e}, ortho={diagnostics['ortho_mean']:.3e}, ")
 
-            # Retract W to Stiefel manifold via QR
-            with torch.no_grad():
-                Q, _ = torch.linalg.qr(Wk)
-            new_Ws.append(Q)
+        return diagnostics
 
-        self.W = new_Ws
+
 
     def fit(self, X, epochs=50):
         for epoch in range(epochs):
             self.step(X)
             if (epoch + 1) % 2 == 0:
                 dual_obj = self.loss_dual(X)
-                unregularized_wc = self.primal_objective(X)  # W_c
+                primal_reg = self.primal_objective_regularized(X)
+                primal_unreg = self.primal_objective(X)  # W_c
 
                 print(f"[Epoch {epoch+1}] "
                     f"Dual objective: {dual_obj.item():.4f}, "
-                    f"W_c (unregularized): {unregularized_wc.item():.4f}")
+                    f"Primal_reg: {primal_reg.item():.4f}, "
+                    f"Primal_unreg: {primal_unreg.item():.4f}")
                 
             # ---- Per-epoch m-change diagnostics ----
             # Compute L2 change of each m compared to previous epoch snapshot (CPU tensors)
-            for k in range(self.K):
-                cur_m_cpu = self.m[k].detach().cpu()
-                prev_m_cpu = self._prev_m[k]
-                delta = cur_m_cpu - prev_m_cpu
-                delta_norm = float(delta.norm().item())
-                # record history
-                self.history_m_changes[k].append(delta_norm)
-                # print concise summary
-                print(f"[Epoch {epoch+1}] m[{k}] = {delta_norm:.6e}")
-            # update snapshots for next epoch
-            self._prev_m = [mi.detach().cpu().clone() for mi in self.m]
+            # for k in range(self.K):
+            #     cur_m_cpu = self.m[k].detach().cpu()
+            #     prev_m_cpu = self._prev_m[k]
+            #     delta = cur_m_cpu - prev_m_cpu
+            #     delta_norm = float(delta.norm().item())
+            #     # record history
+            #     self.history_m_changes[k].append(delta_norm)
+            #     # print concise summary
+            #     print(f"[Epoch {epoch+1}] m[{k}] = {delta_norm:.6e}")
+            # # update snapshots for next epoch
+            # self._prev_m = [mi.detach().cpu().clone() for mi in self.m]
         
         return self
 

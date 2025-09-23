@@ -1,6 +1,6 @@
 device: cuda:0
 model_name: llama3.1
-subspace_data_path: data/combined_subspace/3Ks_subspace_data_llama3.1.pkl
+subspace_data_path: data/combined_subspace/1K_subspace_data_llama3.1.pkl
 input_file: data/instructions/test/llama3.1/autodan_llama3.1.json
 output_file: data/responses/llama3.1/autodan_llama3.1_results.json
 batch_size: 32

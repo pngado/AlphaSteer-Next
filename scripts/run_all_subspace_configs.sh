@@ -9,11 +9,15 @@ echo "Running subspace response generation for all configs in $CONFIG_DIR"
 
 for config_file in "$CONFIG_DIR"/*.yaml; do
     if [ -f "$config_file" ]; then
-        # Skip alpaca_eval.yaml since it's already been run
-        # if [[ "$config_file" == *"alpaca_eval.yaml" ]]; then
-        #     echo "Skipping: $config_file (already processed)"
-        #     continue
-        # fi
+        # Skip specific config files
+        if [[ "$config_file" == *"math.yaml" ]]; then
+            echo "Skipping: $config_file (excluded)"
+            continue
+        fi
+        if [[ "$config_file" == *"gsm8k.yaml" ]]; then
+            echo "Skipping: $config_file (excluded)"
+            continue
+        fi
 
         echo "Processing: $config_file"
         python "$SCRIPT" --config_path "$config_file"

@@ -174,12 +174,17 @@ def learn_steering_matrices(layer_assignments, args):
         # Learn delta matrices using the steering class
         steering.learn_delta(D_b, D_m, gamma=args.gamma)
 
+        # Track which subspaces had harmful data for training
+        valid_subspaces = [k for k in range(len(D_m)) if D_m[k].shape[0] > 0]
+        logger.info(f"Layer {layer}: Valid subspaces (with harmful data): {valid_subspaces}")
+
         # Store the learned delta matrices
         steering_matrices[layer] = {
             'U': [U.cpu() for U in steering.U],  # Principal subspaces
             'V': [V.cpu() for V in steering.V],  # Residual subspaces
             'm': [m.cpu() for m in steering.m],  # Subspace origins
             'Delta': [Delta.cpu() for Delta in steering.Delta],  # Learned steering matrices
+            'valid_subspaces': valid_subspaces,  # NEW: Track which subspaces are valid for inference
             'gamma': args.gamma
         }
 

@@ -9,9 +9,9 @@ MODEL_NAME=llama3.1
 DEVICE=cuda:0
 
 # Subspace learning parameters
-K=8                     # Number of subspaces to learn
+K=3                     # Number of subspaces to learn
 P_RATIO=0.25           # Subspace dimension as ratio of embedding dim
-EPOCHS=100             # Training epochs
+EPOCHS=300             # Training epochs
 LR=1e-3               # Learning rate
 EPSILON=0.1           # OT regularization parameter
 ALPHA=0.1             # Variance preservation ratio (1-alpha kept as principal)

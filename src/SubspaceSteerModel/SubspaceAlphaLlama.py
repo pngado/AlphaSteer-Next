@@ -41,12 +41,14 @@ class SubspaceAlphaLlamaDecoderLayer(AlphaLlamaDecoderLayer):
             self.subspace_m = subspace_data['m']        # List of m_k subspace centers
             self.subspace_V = subspace_data['V']        # List of V_k residual spaces
             self.subspace_Delta = subspace_data['Delta'] # List of Delta_k steering matrices
+            self.valid_subspaces = subspace_data.get('valid_subspaces', list(range(len(subspace_data['W']))))  # NEW
             self.num_subspaces = len(self.subspace_W)
         else:
             self.subspace_W = None
             self.subspace_m = None
             self.subspace_V = None
             self.subspace_Delta = None
+            self.valid_subspaces = []
             self.num_subspaces = 0
 
         self.subspace_strength = strength
@@ -61,6 +63,7 @@ class SubspaceAlphaLlamaDecoderLayer(AlphaLlamaDecoderLayer):
             self.subspace_m = [m.to(device) for m in subspace_data['m']]
             self.subspace_V = [V.to(device) for V in subspace_data['V']]
             self.subspace_Delta = [Delta.to(device) for Delta in subspace_data['Delta']]
+            self.valid_subspaces = subspace_data.get('valid_subspaces', list(range(len(subspace_data['W']))))  # NEW
             self.num_subspaces = len(self.subspace_W)
 
         self.subspace_strength = strength
@@ -68,15 +71,17 @@ class SubspaceAlphaLlamaDecoderLayer(AlphaLlamaDecoderLayer):
     def find_closest_subspace(self, h: torch.Tensor) -> int:
         """
         Find closest subspace using W_k @ W_k.T @ (h - m_k) projection.
-        Returns the index of the closest subspace.
+        Only considers subspaces that had harmful training data.
+        Returns the index of the closest valid subspace.
         """
-        if self.num_subspaces == 0:
+        if self.num_subspaces == 0 or len(self.valid_subspaces) == 0:
             return 0
 
         min_distance = float('inf')
-        closest_idx = 0
+        closest_idx = self.valid_subspaces[0]  # Default to first valid subspace
 
-        for k in range(self.num_subspaces):
+        # Only check valid subspaces (those with harmful training data)
+        for k in self.valid_subspaces:
             W_k = self.subspace_W[k]  # [d_model, p_k]
             m_k = self.subspace_m[k]  # [d_model]
 
@@ -105,7 +110,7 @@ class SubspaceAlphaLlamaDecoderLayer(AlphaLlamaDecoderLayer):
         Returns:
             steering_vector: [d_model]
         """
-        if subspace_idx >= self.num_subspaces:
+        if subspace_idx >= self.num_subspaces or subspace_idx not in self.valid_subspaces:
             return torch.zeros_like(h)
 
         V_k = self.subspace_V[subspace_idx]      # [d_model, residual_dim]
