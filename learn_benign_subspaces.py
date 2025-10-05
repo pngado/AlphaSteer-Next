@@ -10,6 +10,13 @@ import pickle
 import torch
 import os
 import argparse
+import numpy as np
+
+try:
+    import wandb
+    WANDB_AVAILABLE = True
+except ImportError:
+    WANDB_AVAILABLE = False
 
 import logging
 logging.basicConfig(
@@ -30,9 +37,14 @@ def parse_args():
     parser.add_argument("--K", type=int, default=8, help="Number of subspaces to learn")
     parser.add_argument("--p_ratio", type=float, default=0.25, help="Subspace dimension as ratio of embedding dim")
     parser.add_argument("--epochs", type=int, default=100, help="Training epochs")
-    parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
+    parser.add_argument("--lr_g", type=float, default=1e-2, help="Learning rate for g (dual variables)")
+    parser.add_argument("--lr_W", type=float, default=1e-3, help="Learning rate for W (subspace bases)")
     parser.add_argument("--epsilon", type=float, default=0.1, help="OT regularization parameter")
     parser.add_argument("--alpha", type=float, default=0.1, help="Variance preservation ratio (1-alpha kept as principal)")
+
+    # Wandb parameters
+    parser.add_argument("--use_wandb", action="store_true", help="Enable Weights & Biases logging")
+    parser.add_argument("--wandb_project", type=str, default="OT-subspace-learning", help="Wandb project name")
 
     return parser.parse_args()
 
@@ -77,13 +89,16 @@ def learn_subspaces_per_layer(H_benign, target_layers, args, device):
             p=p,
             K=args.K,
             epsilon=args.epsilon,
-            lr=args.lr,
-            device=device
+            lr_g=args.lr_g,
+            lr_W=args.lr_W,
+            device=device,
+            use_wandb=args.use_wandb,
+            layer=layer
         )
 
         # Train subspaces
         logger.info(f"Training subspaces for layer {layer}...")
-        learner.fit(X_layer, epochs=args.epochs)
+        learner.fit(X_layer, max_epochs=args.epochs)
 
         # Refine subspaces to get principal and residual components
         logger.info(f"Refining subspaces for layer {layer}...")
@@ -113,6 +128,27 @@ def learn_subspaces_per_layer(H_benign, target_layers, args, device):
 
 if __name__ == "__main__":
     args = parse_args()
+
+    # Initialize wandb if requested
+    if args.use_wandb:
+        if not WANDB_AVAILABLE:
+            logger.warning("wandb requested but not installed. Install with: pip install wandb")
+            args.use_wandb = False
+        else:
+            wandb.init(
+                project=args.wandb_project,
+                config={
+                    "model_name": args.model_name,
+                    "K": args.K,
+                    "p_ratio": args.p_ratio,
+                    "epochs": args.epochs,
+                    "lr_g": args.lr_g,
+                    "lr_W": args.lr_W,
+                    "epsilon": args.epsilon,
+                    "alpha": args.alpha,
+                    "device": args.device,
+                }
+            )
 
     # Set device
     device = torch.device(args.device)
@@ -147,3 +183,23 @@ if __name__ == "__main__":
     logger.info(f"Subspace dimension: {int(H_benign_train.shape[2] * args.p_ratio)}")
     logger.info(f"Total samples used: {H_benign_train.shape[0]}")
     logger.info(f"Principal variance preserved: {1-args.alpha:.1%}")
+
+    # Log final summary to wandb
+    if args.use_wandb:
+        summary_dict = {
+            'summary/model_name': args.model_name,
+            'summary/num_layers': len(learned_subspaces),
+            'summary/K_original': args.K,
+            'summary/subspace_dim': int(H_benign_train.shape[2] * args.p_ratio),
+            'summary/total_samples': H_benign_train.shape[0],
+            'summary/principal_variance_preserved': 1 - args.alpha,
+        }
+
+        # Add per-layer effective K statistics
+        effective_Ks = [learned_subspaces[layer]['K_effective'] for layer in learned_subspaces]
+        summary_dict['summary/K_effective_mean'] = np.mean(effective_Ks)
+        summary_dict['summary/K_effective_min'] = np.min(effective_Ks)
+        summary_dict['summary/K_effective_max'] = np.max(effective_Ks)
+
+        wandb.log(summary_dict)
+        wandb.finish()

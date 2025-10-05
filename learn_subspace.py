@@ -4,6 +4,12 @@ import torch.optim as optim
 import torch.nn.functional as F
 import numpy as np
 
+try:
+    import wandb
+    WANDB_AVAILABLE = True
+except ImportError:
+    WANDB_AVAILABLE = False
+
 # -----------------------------
 # Utilities
 # -----------------------------
@@ -53,10 +59,14 @@ def projection_distance_centered(X, W, m):
 # OT-based Subspace Learner
 # -----------------------------
 class OTSubspaceLearner:
-    def __init__(self, d, p, K, epsilon=0.1, lr=1e-2, device="cpu"):
+    def __init__(self, d, p, K, epsilon=0.1, lr_g=1e-2, lr_W=1e-3, device="cpu", use_wandb=False, layer=None):
         self.d, self.p, self.K = d, p, K
         self.eps = epsilon
         self.device = device
+        self.lr_g = lr_g
+        self.lr_W = lr_W
+        self.use_wandb = use_wandb and WANDB_AVAILABLE
+        self.layer = layer
 
         # Initialize subspaces
         self.W = [random_stiefel(d, p, device).requires_grad_(True) for _ in range(K)]
@@ -66,16 +76,17 @@ class OTSubspaceLearner:
             'obj': [], 'gradW_mean': [], 'gradg_norm': [], 'relW_mean': [],
             'ortho_mean': [], 'entropy': [], 'hard_change': []
         }
+        # Convergence tracking
+        self.g_grad_history = []
         # Initialize learnable means/origins for each subspace
         self.m = [torch.zeros(d, device=device, requires_grad=True) for _ in range(K)]
         # Dual variables g_k
         self.g = torch.zeros(K, device=device, requires_grad=True)
 
         # Optimizer for g
-        self.opt_g = optim.Adam([self.g], lr=lr)
+        self.opt_g = optim.Adam([self.g], lr=lr_g)
         # Optimizers for each (W_k, m_k) pair
-        self.opt_Wm = [optim.Adam([self.m[k]], lr=lr) for k in range(K)]
-        self.lr = lr
+        self.opt_Wm = [optim.Adam([self.m[k]], lr=lr_g) for k in range(K)]
 
         self.U, self.V = None, None
 
@@ -165,20 +176,68 @@ class OTSubspaceLearner:
 
         return reg_primal
 
+    def converged_g(self, tolerance=1e-4, min_steps=5):
+        """Check if inner g optimization has converged"""
+        if len(self.g_grad_history) < min_steps:
+            return False
 
-    def step(self, X, g_steps=50, print_every=1):
-        # === A) Update dual variables g (maximize) ===
-        for _ in range(g_steps):
+        # Check last few gradient norms
+        recent_grads = self.g_grad_history[-5:]
+        if len(recent_grads) < 5:
+            return False
+
+        # Relative change in gradient norm
+        grad_changes = []
+        for i in range(1, len(recent_grads)):
+            prev_grad, curr_grad = recent_grads[i-1], recent_grads[i]
+            if prev_grad > 1e-12:  # Avoid division by zero
+                rel_change = abs(curr_grad - prev_grad) / prev_grad
+                grad_changes.append(rel_change)
+
+        return all(change < tolerance for change in grad_changes)
+
+    def converged_outer(self, tolerance=1e-4, window=5):
+        """Check convergence based on multiple criteria"""
+        if len(self.history['obj']) < window:
+            return False
+
+        recent_window = self.history['obj'][-window:]
+
+        # 1. Objective change
+        obj_changes = []
+        for i in range(1, len(recent_window)):
+            if abs(recent_window[i-1]) > 1e-12:
+                rel_change = abs(recent_window[i] - recent_window[i-1]) / abs(recent_window[i-1])
+                obj_changes.append(rel_change)
+
+        obj_converged = all(change < tolerance for change in obj_changes)
+        return obj_converged
+
+    def step(self, X, max_g_steps=1000, g_tolerance=1e-4, print_every=1):
+        # === A) Inner loop with adaptive stopping ===
+        inner_converged = False
+
+        for g_step in range(max_g_steps):
             self.opt_g.zero_grad()
             obj = self.loss_dual(X)
             loss = -obj  # maximize obj wrt g
             loss.backward()
+
+            # Track gradient norm
+            g_grad_norm = float(self.g.grad.norm().item())
+            self.g_grad_history.append(g_grad_norm)
+
             self.opt_g.step()
 
-        # Optionally capture grad norm for g (might require g to be a Parameter or store grads)
-        gradg_norm = None
-        if hasattr(self, 'g') and getattr(self, 'g').grad is not None:
-            gradg_norm = float(self.g.grad.norm().cpu().item())
+            # Check inner convergence after minimum steps
+            if g_step >= 10 and self.converged_g(g_tolerance):
+                if print_every:
+                    print(f"  Inner loop converged at step {g_step+1}")
+                inner_converged = True
+                break
+
+        # Final gradient norm for diagnostics
+        gradg_norm = self.g_grad_history[-1] if self.g_grad_history else None
 
         # === B) Update subspaces W and means m (minimize) ===
         # 1) zero grads
@@ -208,7 +267,7 @@ class OTSubspaceLearner:
                 # Check if gradient exists
                 if self.W[k].grad is not None:
                     # gradient step
-                    self.W[k] -= self.lr * self.W[k].grad
+                    self.W[k] -= self.lr_W * self.W[k].grad
                     # retract to Stiefel manifold
                     Q, _ = torch.linalg.qr(self.W[k])
                     self.W[k].copy_(Q)   # in-place overwrite, keeps Parameter object
@@ -219,6 +278,10 @@ class OTSubspaceLearner:
 
 
         # ----- Diagnostics after update -----
+        # Recompute obj with updated W and m for accurate diagnostics (to match primal objectives)
+        with torch.no_grad():
+            obj_after_update = self.loss_dual(X)
+
         # relative change in W (Frobenius) using CPU snapshots
         rel_changes = []
         for k in range(self.K):
@@ -240,8 +303,8 @@ class OTSubspaceLearner:
             ortho_errs.append(float(torch.norm(WT_W - I).cpu().item()))
         ortho_mean = float(np.mean(ortho_errs))
 
-        # Save diagnostics to history
-        self.history['obj'].append(float(obj.detach().cpu().item()))
+        # Save diagnostics to history (using obj after update for consistency with primal objectives)
+        self.history['obj'].append(float(obj_after_update.detach().cpu().item()))
         self.history['gradW_mean'].append(gradW_mean)
         self.history['gradg_norm'].append(gradg_norm if gradg_norm is not None else float('nan'))
         self.history['relW_mean'].append(relW_mean)
@@ -260,37 +323,49 @@ class OTSubspaceLearner:
             print(f"[step] obj={diagnostics['obj']:.6e}, gradW_mean={diagnostics['gradW_mean']:.3e}, "
                 f"relW={diagnostics['relW_mean']:.3e}, ortho={diagnostics['ortho_mean']:.3e}, ")
 
-        return diagnostics
+        return diagnostics, inner_converged
 
 
 
-    def fit(self, X, epochs=50):
-        for epoch in range(epochs):
-            self.step(X)
-            if (epoch + 1) % 2 == 0:
-                dual_obj = self.loss_dual(X)
-                primal_reg = self.primal_objective_regularized(X)
-                primal_unreg = self.primal_objective(X)  # W_c
+    def fit(self, X, max_epochs=300, outer_tolerance=1e-4, patience=5):
+        consecutive_converged = 0
 
-                print(f"[Epoch {epoch+1}] "
-                    f"Dual objective: {dual_obj.item():.4f}, "
-                    f"Primal_reg: {primal_reg.item():.4f}, "
-                    f"Primal_unreg: {primal_unreg.item():.4f}")
-                
-            # ---- Per-epoch m-change diagnostics ----
-            # Compute L2 change of each m compared to previous epoch snapshot (CPU tensors)
-            # for k in range(self.K):
-            #     cur_m_cpu = self.m[k].detach().cpu()
-            #     prev_m_cpu = self._prev_m[k]
-            #     delta = cur_m_cpu - prev_m_cpu
-            #     delta_norm = float(delta.norm().item())
-            #     # record history
-            #     self.history_m_changes[k].append(delta_norm)
-            #     # print concise summary
-            #     print(f"[Epoch {epoch+1}] m[{k}] = {delta_norm:.6e}")
-            # # update snapshots for next epoch
-            # self._prev_m = [mi.detach().cpu().clone() for mi in self.m]
-        
+        for epoch in range(max_epochs):
+            diagnostics, inner_converged = self.step(X)
+
+            # Check outer convergence
+            if self.converged_outer(outer_tolerance):
+                consecutive_converged += 1
+                if consecutive_converged >= patience:
+                    print(f"Training converged at epoch {epoch+1}")
+                    break
+            else:
+                consecutive_converged = 0
+
+            # Compute primal objectives for logging (dual already computed in step)
+            primal_reg = self.primal_objective_regularized(X)
+            primal_unreg = self.primal_objective(X)
+
+            # Log to wandb every epoch
+            if self.use_wandb:
+                wandb.log({
+                    f'layer_{self.layer}/dual_obj': diagnostics['obj'],
+                    f'layer_{self.layer}/gradW_mean': diagnostics['gradW_mean'],
+                    f'layer_{self.layer}/gradg_norm': diagnostics['gradg_norm'],
+                    f'layer_{self.layer}/relW_mean': diagnostics['relW_mean'],
+                    f'layer_{self.layer}/ortho_mean': diagnostics['ortho_mean'],
+                    f'layer_{self.layer}/primal_reg': primal_reg.item(),
+                    f'layer_{self.layer}/primal_unreg': primal_unreg.item(),
+                    f'layer_{self.layer}/converged_count': consecutive_converged,
+                }, step=epoch)
+
+            # Print every 5 epochs
+            if (epoch + 1) % 5 == 0:
+                print(f"[Epoch {epoch+1}] Dual: {diagnostics['obj']:.6f}, "
+                      f"Primal_reg: {primal_reg.item():.6f}, "
+                      f"Primal_unreg: {primal_unreg.item():.6f}, "
+                      f"Converged_count: {consecutive_converged}/{patience}")
+
         return self
 
     def assign_clusters(self, X):
@@ -372,9 +447,26 @@ class OTSubspaceLearner:
         print(f"  Effective K: {self.K_effective}")
         print(f"  Valid cluster indices: {valid_cluster_indices}")
 
+        # Log refinement results to wandb
+        if self.use_wandb:
+            cluster_sizes = [int((cluster_ids == k).sum().item()) for k in valid_cluster_indices]
+            principal_dims = [U.shape[1] for U in U_list]
+            residual_dims = [V.shape[1] for V in V_list]
+
+            wandb.log({
+                f'layer_{self.layer}/K_effective': self.K_effective,
+                f'layer_{self.layer}/K_original': self.K,
+                f'layer_{self.layer}/cluster_sizes': cluster_sizes,
+                f'layer_{self.layer}/principal_dims_mean': np.mean(principal_dims),
+                f'layer_{self.layer}/residual_dims_mean': np.mean(residual_dims),
+            })
+
+            # Log individual cluster statistics
+            for i, k in enumerate(valid_cluster_indices):
+                wandb.log({
+                    f'layer_{self.layer}/cluster_{k}_size': cluster_sizes[i],
+                    f'layer_{self.layer}/cluster_{k}_principal_dim': principal_dims[i],
+                    f'layer_{self.layer}/cluster_{k}_residual_dim': residual_dims[i],
+                })
+
         return U_list, V_list
-    
-if __name__ == "__main__":
-    X = random_stiefel(5, 3)  # A random 5x3 matrix with orthonormal columns
-    print(X)
-    print("Check orthonormality:", X.T @ X)  # should be close to I
