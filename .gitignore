@@ -1,6 +1,25 @@
 __pycache__/
+*.pyc
 
+# Data directories
 embeddings/
 steering_matrix/
+
+# Data files (models, embeddings, vectors)
+*.pkl
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# Wandb logs
+wandb/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment
+.env
+*.egg-info/
 
 requirements(drop).txt
